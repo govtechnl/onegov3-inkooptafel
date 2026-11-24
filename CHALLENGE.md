@@ -47,7 +47,7 @@ You turn the toets's rules into working code (rules-as-code), design a smart que
 1. How do you turn the toets into explicit, testable decision rules, so every outcome can be explained?
 2. Which questions must a non-technical user answer to reach a reliable classification in a few minutes?
 3. Which sovereignty level fits an outcome of the toets, and which minimum requirements from law and regulation (such as NORA and the Cyberbeveiligingswet) form the floor? How do you translate that into requirements and award criteria that are proportionate and fit procurement law?
-4. How do you keep the model separate from the tool, so the rules can be updated when policy or frameworks change?
+4. How do you keep the rules separate from the tool, so the rules can be updated when policy or frameworks change?
 
 ## Personas
 
