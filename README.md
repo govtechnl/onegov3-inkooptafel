@@ -1,4 +1,4 @@
-# OneGov #3 | Van classificatie naar inkooptafel
+# OneGov #3 | Van beleid naar inkooptafel
 
 > *From a classification model to requirements that go straight into the tender.*
 

@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in the **OneGov #3 | Van classificatie naar inkooptafel** challenge repository.
+Thanks for your interest in the **OneGov #3 | Van beleid naar inkooptafel** challenge repository.
 
 This repo is maintained by **GovTech NL** together with the challenge owners **DACC** and **VNG Realisatie** for the hackathon on **9-10 December 2026** at The Hague Tech. Contributions are welcome from organisers, mentors, participating teams and the wider community.
 

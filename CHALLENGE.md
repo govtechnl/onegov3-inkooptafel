@@ -1,4 +1,4 @@
-# Challenge Brief | Van classificatie naar inkooptafel
+# Challenge Brief | Van beleid naar inkooptafel
 
 > **OneGov #3** · Challenge 2 · DACC & VNG Realisatie · 9-10 December 2026 · The Hague Tech, Den Haag
 >
