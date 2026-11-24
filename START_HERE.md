@@ -6,13 +6,13 @@ If you are starting the challenge now, follow this order.
 
 - Read [CHALLENGE.md](CHALLENGE.md).
 - Skim [docs/judging-criteria.md](docs/judging-criteria.md). Every Must is blocking.
-- Read [docs/classification-model.md](docs/classification-model.md): two axes, ten patterns.
+- Read [docs/classification-model.md](docs/classification-model.md): the classificatietoets in five steps, and what is missing.
 
 ## 2) Pick your angle (10 min)
 
 All teams cover the three steps (classify, advise a level, produce requirements). Choose where you go deepest:
 
-- **Rules first:** a well-founded level per pattern, with traceable minimum requirements from law and regulation. Start with [docs/sovereignty-levels.md](docs/sovereignty-levels.md) and [docs/sources.md](docs/sources.md).
+- **Rules first:** a well-founded level per toets outcome, with traceable minimum requirements from law and regulation. Start with [docs/sovereignty-levels.md](docs/sovereignty-levels.md) and [docs/sources.md](docs/sources.md).
 - **User first:** a question flow a buyer completes in five minutes, and output they can paste into a tender. Start with [docs/personas.md](docs/personas.md) and [docs/scenarios.md](docs/scenarios.md).
 - **Bonus:** open-source viability, or linking to the DACC maturity model. See the Could criteria.
 
@@ -32,17 +32,16 @@ pytest -v
 
 Using another language? Fine. Keep the data files in `data/` as your input and make sure your rules are testable.
 
-## 4) Make one pattern work end-to-end (first hours)
+## 4) Make one profile work end-to-end (first hours)
 
-- Pick one pattern, for example `P03` (business-critical, personal data).
-- Advise a level and write it down with a rationale in your copy of [data/patterns.yaml](data/patterns.yaml).
-- Add two or three requirements, each with a `source` from [data/sources.yaml](data/sources.yaml).
-- Render it: `python -m inkooptafel.pve P03`.
-- Look at [tooling/examples/example-patterns.yaml](tooling/examples/example-patterns.yaml) for the format. It is an illustration, not advice.
+- Run the example: `python -m inkooptafel.toets examples/assessment-example.yaml`.
+- Write your first rules file in `submissions/<team-name>/rules.yaml`, using the format of [tooling/examples/example-rules.yaml](tooling/examples/example-rules.yaml). That file is an illustration, not advice.
+- Add a SEAL minimum per objective and two or three requirements, each with a `source` from [data/sources.yaml](data/sources.yaml).
+- Render it: `python -m inkooptafel.advies examples/assessment-example.yaml --rules ../submissions/<team-name>/rules.yaml`.
 
 ## 5) Scale out and demo
 
-- Fill in the other patterns, or explain in your pitch why some are out of scope.
+- Cover the range of outcomes (low and high B, I and V; with and without supplier dependency), or explain in your pitch what is out of scope.
 - Build the question flow and the export.
 - Run your tool on a case from [cases/](cases/).
 

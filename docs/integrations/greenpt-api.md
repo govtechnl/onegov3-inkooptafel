@@ -4,13 +4,13 @@
 
 ## Where an LLM call might help
 
-- **Explanation:** turn a pattern, level and requirement list into a short plain-language summary for a buyer or a board.
+- **Explanation:** turn a profile, level and requirement list into a short plain-language summary for a buyer or a board.
 - **Question support:** help a user understand a question ("what counts as special categories of personal data?"), after which the user answers.
 - **Finding passages:** suggest where in a law or framework a requirement may come from, for a person to check.
 
 ## Where an LLM call should **not** be used
 
-- To decide the pattern, the level or a requirement. That violates M4.
+- To decide the profile, the level or a requirement. That violates M4.
 - To generate requirement text on the fly that is not stored in your rules.
 - To send confidential tender information to any API.
 

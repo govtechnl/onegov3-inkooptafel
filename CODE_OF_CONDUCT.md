@@ -13,7 +13,7 @@ We pledge to act and interact in ways that contribute to an open, welcoming, div
 This challenge touches real procurement practice. Some extra rules apply:
 
 - **Confidentiality.** Do not share non-public tender documents, bids, prices, contracts or internal documents in this repository, in issues, or on Alkemio. If a mentor or challenge owner shares something with your team that is marked confidential, it stays out of your submission.
-- **Fairness to suppliers.** Do not publish judgements about named suppliers or products, and do not present a tool output as a verdict on a real company. The challenge is about requirements and patterns, not about blacklists.
+- **Fairness to suppliers.** Do not publish judgements about named suppliers or products, and do not present a tool output as a verdict on a real company. The challenge is about requirements and classifications, not about blacklists.
 - **No autonomy washing.** Be honest about what your tool can and cannot establish. Do not present an advised level as a legal conclusion.
 - **Respect for the people behind the cases.** Cases are anonymised. Do not try to identify the organisation or people involved.
 

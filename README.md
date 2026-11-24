@@ -12,9 +12,9 @@ This repository hosts the challenge brief, supporting documents, machine-readabl
 
 ## The challenge in one paragraph
 
-There is plenty of policy on digital autonomy, but it disappears at the procurement table because nobody can make it concrete. Not every system needs the same level of autonomy. A classification model combines the **business criticality** of a system with the **sensitivity of its data** into one of ten patterns. What is missing is the step from pattern to **sovereignty level** to **requirements a buyer can put in the tender**.
+There is plenty of policy on digital autonomy, but it disappears at the procurement table because nobody can make it concrete. Not every system needs the same level of autonomy. The **classificatietoets**, in use in an Amsterdam pilot, takes a process down to its critical data and scores **process criticality** and **availability, integrity and confidentiality (BIV)**. What is missing is the step from that outcome to a **sovereignty level** and **requirements a buyer can put in the tender**.
 
-**How do we turn that model into a tool buyers and information managers can use tomorrow: classify a system, advise a well-founded sovereignty level, and get requirements that go straight into the tender documents?**
+**How do we turn that toets into a tool buyers and information managers can use tomorrow: classify a system, advise a well-founded sovereignty level, and get requirements that go straight into the tender documents?**
 
 The full brief is in [CHALLENGE.md](CHALLENGE.md). New teams start with [START_HERE.md](START_HERE.md).
 
@@ -24,14 +24,13 @@ The full brief is in [CHALLENGE.md](CHALLENGE.md). New teams start with [START_H
 |---|---|---|
 | [CHALLENGE.md](CHALLENGE.md) | Full challenge brief (English working translation of the Dutch original) | Available |
 | [START_HERE.md](START_HERE.md) | Step-by-step start for teams | Available |
-| [docs/](docs/) | Classification model, sovereignty levels, sources, rules-as-code guidance, procurement context, personas, scenarios, judging criteria, glossary | Available |
-| [data/classification.yaml](data/classification.yaml) | The two axes of the classification model | Available (working version) |
-| [data/patterns.yaml](data/patterns.yaml) | The 10 patterns, with empty fields for level, rationale and requirements | Available, to be filled in by teams |
+| [docs/](docs/) | Classificatietoets, sovereignty levels, sources, rules-as-code guidance, procurement context, personas, scenarios, judging criteria, glossary | Available |
+| [data/toets.yaml](data/toets.yaml) | The classificatietoets: steps 0-4, process criticality, all BIV questions, scores and decision rules | Available |
 | [data/sources.yaml](data/sources.yaml) | Laws, frameworks and guidance with possible minimum requirements | Available (links being added) |
-| [data/schemas/](data/schemas/) | JSON Schemas for all catalogues | Available |
+| [data/schemas/](data/schemas/) | JSON Schemas for the catalogues, for answers to the toets and for your rules | Available |
 | [data/ibd/](data/ibd/) | IBD list of critical processes for municipalities | Being prepared |
 | [cases/](cases/) | Anonymised procurement cases to demonstrate your tool on | Being prepared |
-| [tooling/](tooling/) | Optional Python starter: catalogue validation, classifier, PvE renderer, example question flow, tests | Available |
+| [tooling/](tooling/) | Optional Python starter: the toets as code, a rules engine and PvE renderer, examples, tests | Available |
 | [submissions/](submissions/) | Where your team's work lands in your Pull Request | Empty |
 | [resources/](resources/) | Source material as delivered by the challenge owners | Being prepared |
 
@@ -44,18 +43,18 @@ source .venv/bin/activate        # Windows: .\.venv\Scripts\Activate.ps1
 pip install -e .[dev]
 pytest -v
 
-# Which pattern is a business-critical system with personal data?
-python -m inkooptafel.classify --kritikaliteit bedrijfskritiek --gegevens persoonsgegevens
+# Steps 0-4: from answers to a profile (process criticality, B, I, V)
+python -m inkooptafel.toets examples/assessment-example.yaml
 
-# What does a filled-in PvE fragment look like? (illustrative example, not advice)
-python -m inkooptafel.pve P03 --patterns examples/example-patterns.yaml
+# From profile to sovereignty advice and requirements (illustrative rules, not advice)
+python -m inkooptafel.advies examples/assessment-example.yaml --rules examples/example-rules.yaml
 ```
 
 The tooling is optional. **Teams are free to choose any language and approach**, as long as the decision rules are explicit and testable.
 
 ## Important to know
 
-- The classification model does **not** yet map patterns to a sovereignty level. That mapping is the core of the challenge.
+- The toets does **not** give a sovereignty level, and the SEAL level does not follow automatically from BIV: it concerns the concrete service being procured. Designing that step is the core of the challenge.
 - Minimum requirements from law and regulation (see [docs/sources.md](docs/sources.md)) form the floor of your advice.
 - Use AI for explanation or the question flow if you like, but do not let a language model decide the classification. See [docs/rules-as-code.md](docs/rules-as-code.md).
 - This repository contains no confidential tender documents or supplier information. Keep it that way in your submission.

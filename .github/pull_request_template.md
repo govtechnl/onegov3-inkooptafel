@@ -22,15 +22,15 @@
 
 ### ✅ Must checklist (jury blocking)
 
-- [ ] **M1** Working tool that classifies a system on business criticality and data sensitivity, based on the supplied model.
-- [ ] **M2** Per pattern, an advised sovereignty level with a justification traceable to the model and sources.
+- [ ] **M1** Working tool that classifies a process and its critical data on process criticality and BIV, based on the supplied toets.
+- [ ] **M2** For each outcome, an advised sovereignty level with a justification traceable to the toets and sources.
 - [ ] **M3** The tool produces requirements or award criteria a buyer can use in tender documents.
 - [ ] **M4** Decision rules are explicit in code or configuration (rules-as-code), not hidden in a prompt.
 - [ ] **M5** Code and rules open source under an OSI-approved licence; rules and docs under CC BY 4.0 or CC0. See [`CONTRIBUTING.md`](../CONTRIBUTING.md#licensing-of-contributions).
 
 ### ⭐ Should evidence (linked in the PR body)
 
-- [ ] **S1** Traceability: user sees why a system falls in a pattern and which source each requirement comes from.
+- [ ] **S1** Traceability: user sees which answers led to the classification and which source each requirement comes from.
 - [ ] **S2** Question flow usable by a non-technical user in about five minutes.
 - [ ] **S3** Demonstrated on a supplied procurement case (worked example included).
 - [ ] **S4** Requirements align with existing frameworks and respect minimum requirements from law and regulation.

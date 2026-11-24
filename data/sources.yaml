@@ -113,7 +113,7 @@ sources:
     category: guidance
     origin: icbr-werksessie
     url: null
-    notes: Source of the mitigating measures that belong to each classification pattern.
+    notes: Source of mitigating measures for cloud services.
   - id: handreikingen-ict-sourcing
     name: Handreikingen ICT Sourcing
     category: guidance

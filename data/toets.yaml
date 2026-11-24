@@ -1,0 +1,226 @@
+# Classificatietoets: proces- en dataclassificatie (stap 0 t/m 4)
+#
+# Machine-readable version of the questionnaire supplied by the challenge owners
+# (Suzanne Kaufmann et al.), the version that is being developed further and used
+# in a pilot in Amsterdam. Derived for OneGov #3; the original Word document is not
+# redistributed here.
+#
+# Structure:
+#   steps                 the five-step funnel from process to critical data elements
+#   proceskritikaliteit   process criticality (step 0)
+#   biv                   availability (B), integrity (I) and confidentiality (V),
+#                         per process (step 0) and per critical data element (step 4)
+#
+# Key rules from the questionnaire:
+#   - B and I are scored 1-5 per question; the final score is the HIGHEST score.
+#     Never add up, never average.
+#   - V has three levels (Openbaar, Vertrouwelijk, Geheim) set by decision rules.
+#   - "Weet ik niet" / "onbekend" means: find out, do not guess.
+#   - B, I and V remain separate classifications.
+#   - The SEAL level does NOT follow automatically from the BIV score; a SEAL
+#     assessment concerns the concrete service being procured.
+
+meta:
+  name: Classificatietoets proces- en dataclassificatie
+  version: "stap 0 t/m 4"
+  basis: BIO2
+  status: in use in an Amsterdam pilot; being developed further
+
+steps:
+  - id: 0
+    name: Proces en dienst
+    goal: Bepaal belang en gevolg van uitval
+    output: afgebakend proces, proceseigenaar, proceskritikaliteit, voorlopige BIV van het proces
+  - id: 1
+    name: Activiteiten
+    goal: Breng werk en afhankelijkheden in beeld
+    output: activiteiten (A1, A2, ...) in de volgorde waarin het werk gebeurt
+  - id: 2
+    name: Kritieke data
+    goal: Kies kritieke data en belangrijke velden
+    output: kritieke gegevenssets (D1, D2, ...) en kritieke data-elementen (D1.1, D1.2, ...)
+    rules:
+      - Neem alleen data op die het proces nodig heeft of aanmaakt.
+      - Stamdata en data uit basis- en kernregistraties zijn per definitie kritiek als het proces ze gebruikt.
+      - Andere data is kritiek als fouten of uitval grote gevolgen hebben en er geen betrouwbare vervanging is.
+      - Onbekend betekent een actiehouder toewijzen.
+  - id: 3
+    name: Bron en taken
+    goal: Leg bron, systemen en verantwoordelijke teams vast
+    output: per kritieke gegevensset de officiele bron, gebruikssystemen en verantwoordelijke teams
+  - id: 4
+    name: BIV en afspraken
+    goal: Spreek bescherming, kwaliteit en herstel af
+    output: per kritiek data-element een B-, I- en V-classificatie en afspraken voor beheer, kwaliteit en leveranciers
+
+proceskritikaliteit:
+  values:
+    - id: kritiek
+      label: Kritiek
+      when: Formeel als kritiek aangewezen, of ernstige gevolgen bij uitval (van 72 uur) en geen betrouwbare noodoplossing.
+    - id: kern
+      label: Kern
+      when: Belangrijke gemeentelijke taak; gevolgen van uitval zijn tijdelijk op te vangen.
+    - id: ondersteunend
+      label: Ondersteunend
+      when: Helpt vooral bij sturing, planning of beheer; de hoofdtaak kan voorlopig doorgaan.
+    - id: onbekend
+      label: Onbekend
+      when: Gevolgen zijn nog onduidelijk; laat dit uitzoeken door de procesverantwoordelijke.
+  inputs:
+    gevolg_72u: [beperkt, merkbaar, ernstig, zeer-ernstig, onbekend]
+    noodoplossing: [ja, deels, nee, onbekend]
+    gemma: [uitvoerend-primair, sturend, ondersteunend, onbekend]
+
+biv:
+  scale:
+    - {score: 1, label: Verwaarloosbaar / laag}
+    - {score: 2, label: Gering / beperkt}
+    - {score: 3, label: Gemiddeld / merkbaar}
+    - {score: 4, label: Kritiek / hoog}
+    - {score: 5, label: Catastrofaal / zeer hoog}
+  aggregation: max
+
+  beschikbaarheid:
+    question: Hoe lang kan het proces of het gegeven zonder informatie functioneren voordat de dienstverlening of continuiteit wordt geraakt?
+    note: Een kortere toegestane uitval of hersteltijd betekent een hogere B-score.
+    duration_choices: &duration
+      uren: 5
+      dag-deel: 4
+      week: 3
+      meer-dan-een-week: 2
+      meer-dan-twee-weken: 1
+    questions:
+      - id: B1
+        topic: Managementbeslissingen
+        text: Welke tijdsduur zonder informatie is nog acceptabel voordat het ontbreken ervan beslissingen negatief beinvloedt?
+        choices: *duration
+      - id: B2
+        topic: Imagoverlies
+        text: Hoe lang kan informatie ontbreken voordat imagoverlies ontstaat?
+        choices: *duration
+      - id: B3
+        topic: Dienstverlening / hersteltijd
+        text: Hoe lang kan informatie ontbreken voordat dienstverlening aan inwoners, bedrijven of ketenpartners hapert? Hoe snel moet herstel plaatsvinden?
+        choices:
+          max-4-werkuren: 5
+          8-werkuren: 4
+          16-werkuren: 3
+          40-werkuren: 2
+          meer-dan-40-werkuren: 1
+      - id: B4
+        topic: Wettelijke/contractuele verplichtingen
+        text: Hoe lang kan informatie ontbreken voordat wettelijke of contractuele verplichtingen niet meer kunnen worden nagekomen?
+        choices: *duration
+      - id: B5
+        topic: Extra kosten
+        text: Na welke periode leidt het ontbreken van informatie tot extra kosten voor de organisatie?
+        choices: *duration
+      - id: B6
+        topic: Medewerkers
+        text: Na welke periode heeft de onderbreking van de informatiestroom duidelijk negatieve invloed op moraal en motivatie?
+        choices: *duration
+      - id: B7
+        topic: Herstel / dataverlies (RTO/RPO)
+        text: Hoeveel tijd mag herstel kosten voordat dienstverlening hapert of herstelkosten hoog worden? Hoeveel dataverlies is aanvaardbaar?
+        choices:
+          minder-dan-4-uur: 5
+          tot-8-uur: 4
+          8-tot-24-uur: 3
+          meer-dan-24-uur: 2
+          meer-dan-een-week: 1
+
+  integriteit:
+    question: Wat zijn de gevolgen als informatie onjuist, onvolledig, niet betrouwbaar of niet authentiek is? Beoordeel ook fouten en ongeautoriseerde wijzigingen.
+    note: Score per vraag direct op de schaal 1-5.
+    questions:
+      - id: I1
+        topic: "Managementbeslissingen"
+        text: "Kan onjuiste informatie leiden tot onjuiste beslissingen? Wat zijn de gevolgen?"
+      - id: I2
+        topic: "Frauderisico"
+        text: "Zijn er frauderisico's met deze informatie, en welke gevolgen hebben die?"
+      - id: I3
+        topic: "Onderbreking processen"
+        text: "In hoeverre kunnen kernprocessen worden onderbroken door ongeautoriseerde wijzigingen of fouten in informatie?"
+      - id: I4
+        topic: "Vertrouwen"
+        text: "Kan onjuiste informatie het vertrouwen van publiek, inwoners of collega's schaden?"
+      - id: I5
+        topic: "Wettelijke/contractuele verplichtingen"
+        text: "Wat zijn de gevolgen als door onjuiste informatie wettelijke of contractuele verplichtingen niet worden nagekomen?"
+      - id: I6
+        topic: "Extra kosten"
+        text: "Welke extra kosten kunnen ontstaan door onjuiste informatie, zoals herstel van een beschadigde database of opnieuw invoeren?"
+      - id: I7
+        topic: "Medewerkers"
+        text: "Welke schadelijke effecten kan het gebruik van onjuiste informatie hebben op moraal en motivatie van medewerkers?"
+
+  vertrouwelijkheid:
+    levels:
+      - id: openbaar
+        label: Openbaar
+        description: Kan publiekelijk gedeeld worden zonder onacceptabele risico's. Uitgangspunt voor de gemeente is openbaar, tenzij expliciet Vertrouwelijk of Geheim; vanuit de AVG moet er altijd een grondslag voor openbaarmaking zijn.
+      - id: vertrouwelijk
+        label: Vertrouwelijk
+        description: Mag vanwege wetgeving, privacy, vertrouwelijkheid of mogelijke schade niet openbaar zijn. Persoonsgegevens worden in beginsel minimaal als vertrouwelijk behandeld.
+      - id: geheim
+        label: Geheim
+        description: Hoogste bescherming, bijvoorbeeld geheimhouding op grond van artikel 87 Gemeentewet met een belang uit artikel 5.1 Woo, of zeer gevoelige persoonsgegevens waarvan onbevoegde verstrekking kan leiden tot onomkeerbare schade of levensgevaar.
+    answers: [ja, nee, weet-ik-niet]
+    questions:
+      - id: V1
+        topic: "Officieel geheim"
+        text: "Is er een officieel besluit waarin staat dat deze informatie geheim moet blijven?"
+      - id: V2
+        topic: "Besluit mogelijk nodig"
+        text: "Moet een bevoegd gemeentelijk orgaan mogelijk nog besluiten dat de informatie geheim blijft?"
+      - id: V3
+        topic: "Ernstig gevaar voor mensen"
+        text: "Kan openbaarmaking iemand in levensgevaar brengen of onomkeerbare schade veroorzaken?"
+      - id: V4
+        topic: "Belangrijke voorziening of dienst"
+        text: "Kan iemand de informatie gebruiken om een belangrijke gemeentelijke voorziening of dienst te verstoren of onveilig te maken?"
+      - id: V5
+        topic: "Gegevens over personen"
+        text: "Bevat de informatie niet-openbare persoonsgegevens, of maakt een combinatie iemand herkenbaar?"
+      - id: V6
+        topic: "Andere reden voor afscherming"
+        text: "Is er een concrete wet, afspraak of reden waardoor de informatie niet met iedereen gedeeld mag worden?"
+      - id: V7
+        topic: "Gemeentelijke afspraak hoogste bescherming"
+        text: "Bepaalt een vastgestelde gemeentelijke afspraak dat dit type informatie de hoogste bescherming krijgt?"
+      - id: V8
+        topic: "Controle op openbaar delen"
+        text: "Is gecontroleerd dat alle beoordeelde informatie met iedereen gedeeld mag worden?"
+    decision_rules:
+      - level: geheim
+        if_any_yes: [V1, V2, V3, V7]
+        notes: V2 gives a provisional Geheim. A classification Geheim is not in itself a formal secrecy decision.
+      - level: vertrouwelijk
+        if_any_yes: [V4, V5, V6]
+        notes: With V4 = ja, information security assesses severity; with serious consequences Geheim can be appropriate.
+      - level: openbaar
+        if_all_no: [V1, V2, V3, V4, V5, V6, V7]
+        and_yes: [V8]
+      - level: onbekend
+        otherwise: true
+        notes: Any "weet ik niet" that could change the outcome means find out first; do not guess.
+
+follow_up:
+  # From the questionnaire: what to discuss and record after the BIV assessment.
+  - trigger: hoge-beschikbaarheid
+    discuss: Beheer
+    record: back-up, herstel, noodtoegang, continuiteit en gewenste hersteltijd
+  - trigger: hoge-integriteit
+    discuss: Kwaliteit
+    record: controles, kwaliteitsnormen, correcties, bronafspraken en wie afwijkingen oplost
+  - trigger: hoge-vertrouwelijkheid
+    discuss: Beheer en beveiliging
+    record: wie toegang heeft, logging, afscherming, maskering en controle
+  - trigger: kritieke-data
+    discuss: Management
+    record: risico, gewenste bescherming, middelen en wie voortgang bewaakt
+  - trigger: leveranciersafhankelijkheid
+    discuss: Leverancier en autonomie (inkoop, architectuur)
+    record: opslaglocatie, toegang, export, overdracht, herstel, exit en eventuele SEAL-toets

@@ -1,0 +1,37 @@
+# FICTIONAL EXAMPLE. Shows the format of a filled-in toets for one process.
+# Answers are made up for illustration; they are not an assessment of a real process.
+
+assessment:
+  object: "Voorbeeld: verstrekken van parkeervergunningen"
+  level: proces
+
+  proceskritikaliteit:
+    formeel_kritiek: false
+    gevolg_72u: merkbaar
+    noodoplossing: deels
+    oordeel: kern            # the rules cannot decide kern vs ondersteunend; the process owner does
+
+  beschikbaarheid:           # B1-B7: choose one option per question (see data/toets.yaml)
+    B1: week
+    B2: dag-deel
+    B3: 16-werkuren
+    B4: week
+    B7: 8-tot-24-uur
+
+  integriteit:               # I1-I7: score 1-5 per question
+    I1: 2
+    I2: 3
+    I3: 2
+    I5: 3
+
+  vertrouwelijkheid:         # V1-V8: ja | nee | weet-ik-niet
+    V1: nee
+    V2: nee
+    V3: nee
+    V4: nee
+    V5: ja                   # kenteken and adres are personal data
+    V6: nee
+    V7: nee
+    V8: nee
+
+  leveranciersafhankelijk: true

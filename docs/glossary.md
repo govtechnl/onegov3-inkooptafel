@@ -65,5 +65,11 @@ Quick reference for acronyms and Dutch terms used in this repository. Aimed at i
 
 | Term | What it is |
 |---|---|
-| **Patroon** (pattern) | One of the 10 combinations of criticality and data class |
+| **Classificatietoets** | The questionnaire this challenge builds on: process and data classification in five steps |
+| **Profiel** (profile) | Outcome of the toets for one process or data element: process criticality, B, I, V |
+| **BIV** | Beschikbaarheid, Integriteit, Vertrouwelijkheid: availability, integrity, confidentiality |
+| **Kritiek / Kern / Ondersteunend** | The process criticality levels in the toets |
+| **Openbaar / Vertrouwelijk / Geheim** | The confidentiality levels in the toets |
+| **Stamdata / basisregistratie** | Master data and base registers; critical by definition when a process uses them |
+| **RTO / RPO** | Recovery time objective / recovery point objective (question B7) |
 | **Rules-as-code** | Decision rules written as code or configuration that can be read, tested and versioned |

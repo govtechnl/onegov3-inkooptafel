@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/govtechnl/onegov3-inkooptafel/data/schemas/assessment.schema.json",
+  "title": "Answers to the classificatietoets for one process or data element",
+  "type": "object",
+  "required": ["assessment"],
+  "additionalProperties": false,
+  "properties": {
+    "assessment": {
+      "type": "object",
+      "required": ["object", "level"],
+      "additionalProperties": false,
+      "properties": {
+        "object": {"type": "string", "description": "Name of the process, service or data element"},
+        "level": {"enum": ["proces", "data-element"]},
+        "proceskritikaliteit": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "formeel_kritiek": {"type": "boolean"},
+            "gevolg_72u": {"enum": ["beperkt", "merkbaar", "ernstig", "zeer-ernstig", "onbekend"]},
+            "noodoplossing": {"enum": ["ja", "deels", "nee", "onbekend"]},
+            "oordeel": {
+              "enum": ["kritiek", "kern", "ondersteunend", "onbekend"],
+              "description": "Judgement of the process owner, required when the rules cannot decide"
+            }
+          }
+        },
+        "beschikbaarheid": {
+          "type": "object",
+          "patternProperties": {"^B[0-9]+$": {"type": "string"}},
+          "additionalProperties": false
+        },
+        "integriteit": {
+          "type": "object",
+          "patternProperties": {"^I[0-9]+$": {"type": "integer", "minimum": 1, "maximum": 5}},
+          "additionalProperties": false
+        },
+        "vertrouwelijkheid": {
+          "type": "object",
+          "patternProperties": {"^V[0-9]+$": {"enum": ["ja", "nee", "weet-ik-niet"]}},
+          "additionalProperties": false
+        },
+        "leveranciersafhankelijk": {"type": "boolean"}
+      }
+    }
+  }
+}

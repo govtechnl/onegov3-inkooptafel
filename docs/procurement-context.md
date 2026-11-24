@@ -15,11 +15,11 @@ Your tool should label each output as one or the other. A sovereignty minimum (s
 
 ## Proportionality
 
-Dutch procurement law requires requirements to be proportionate to the contract. In practice: every requirement should be explainable from the nature of the system, the data and the risks. That is why a per-pattern advice is more defensible than "maximum sovereignty for everything".
+Dutch procurement law requires requirements to be proportionate to the contract. In practice: every requirement should be explainable from the nature of the system, the data and the risks. That is why an advice per classification outcome is more defensible than "maximum sovereignty for everything".
 
 Design consequences for your tool:
 
-- Show **why** a requirement applies (pattern, level, source).
+- Show **why** a requirement applies (toets outcome, level, source).
 - Prefer requirements that describe an **outcome or guarantee** (for example: data and control not subject to non-European extraterritorial law) over requirements that name a technology or a supplier.
 - Flag when a combination of requirements may sharply narrow the market, so the buyer can make a conscious choice.
 

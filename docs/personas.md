@@ -39,7 +39,7 @@ Ahmed manages the application landscape: more than two hundred systems, from the
 **What he needs from your tool:**
 
 - A consistent, explainable classification he can repeat for many systems.
-- Insight into why a system lands in a pattern, and which sources drive the level.
+- Insight into which answers drive the classification, and which sources drive the level.
 - Output that flows directly into Sanne's tender.
 
 > *"Not everything has to be sovereign. But I have to be able to explain why one thing is and the other isn't."*

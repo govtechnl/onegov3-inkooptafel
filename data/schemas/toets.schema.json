@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/govtechnl/onegov3-inkooptafel/data/schemas/toets.schema.json",
+  "title": "Classificatietoets (proces- en dataclassificatie)",
+  "type": "object",
+  "required": ["meta", "steps", "proceskritikaliteit", "biv", "follow_up"],
+  "properties": {
+    "meta": {"type": "object", "required": ["name"]},
+    "steps": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "object", "required": ["id", "name", "goal", "output"]}
+    },
+    "proceskritikaliteit": {
+      "type": "object",
+      "required": ["values", "inputs"],
+      "properties": {
+        "values": {
+          "type": "array",
+          "items": {"type": "object", "required": ["id", "label", "when"]}
+        }
+      }
+    },
+    "biv": {
+      "type": "object",
+      "required": ["scale", "aggregation", "beschikbaarheid", "integriteit", "vertrouwelijkheid"],
+      "properties": {
+        "aggregation": {"const": "max"},
+        "scale": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["score", "label"],
+            "properties": {"score": {"type": "integer", "minimum": 1, "maximum": 5}}
+          }
+        },
+        "beschikbaarheid": {
+          "type": "object",
+          "required": ["questions"],
+          "properties": {
+            "questions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["id", "topic", "text", "choices"],
+                "properties": {
+                  "id": {"type": "string", "pattern": "^B[0-9]+$"},
+                  "choices": {
+                    "type": "object",
+                    "minProperties": 2,
+                    "additionalProperties": {"type": "integer", "minimum": 1, "maximum": 5}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "integriteit": {
+          "type": "object",
+          "required": ["questions"],
+          "properties": {
+            "questions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["id", "topic", "text"],
+                "properties": {"id": {"type": "string", "pattern": "^I[0-9]+$"}}
+              }
+            }
+          }
+        },
+        "vertrouwelijkheid": {
+          "type": "object",
+          "required": ["levels", "answers", "questions", "decision_rules"],
+          "properties": {
+            "questions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["id", "topic", "text"],
+                "properties": {"id": {"type": "string", "pattern": "^V[0-9]+$"}}
+              }
+            }
+          }
+        }
+      }
+    },
+    "follow_up": {
+      "type": "array",
+      "items": {"type": "object", "required": ["trigger", "discuss", "record"]}
+    }
+  }
+}

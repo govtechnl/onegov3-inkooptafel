@@ -40,7 +40,7 @@ This is a **first pass** compiled by the challenge owners from the VNG *Uitvoeri
 
 | Id | Source |
 |---|---|
-| `handreiking-cloud` | Handreiking Cloud (source of the mitigating measures per pattern) |
+| `handreiking-cloud` | Handreiking Cloud (mitigating measures for cloud services) |
 | `handreikingen-ict-sourcing` | Handreikingen ICT Sourcing |
 | `handreiking-exit` | Handreiking exitstrategie en tijdlijnen / technologierisico's |
 

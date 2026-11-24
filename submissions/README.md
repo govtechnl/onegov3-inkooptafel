@@ -6,7 +6,7 @@ Each team puts its work in its own folder in its fork, and opens **one Pull Requ
 submissions/
   <team-name>/
     README.md          what you built, how to run it, which LLM (if any) and where
-    rules/             your level and requirement rules (data files), or a filled-in patterns.yaml
+    rules/             your rules (see data/schemas/rules.schema.json)
     src/               your tool (any language)
     tests/             tests for your rules
     case/              your worked procurement case

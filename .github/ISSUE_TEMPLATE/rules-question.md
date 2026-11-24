@@ -5,7 +5,7 @@ labels: question
 ---
 
 **Topic**
-- [ ] Classification model (axes, patterns)
+- [ ] Classificatietoets (steps, BIV rules)
 - [ ] Sovereignty levels (SEAL, what is proportionate)
 - [ ] Minimum requirements from law and regulation
 - [ ] Rules-as-code approach

@@ -27,7 +27,7 @@ This is the primary flow during the hackathon.
 1. **Explicit, testable rules.** The classification and the mapping to a sovereignty level live in code or configuration that can be read and tested without the interface. No decision hidden in a prompt.
 2. **Traceable requirements.** Every requirement or award criterion your tool produces points to a source in `data/sources.yaml`. Add sources with `origin: team` if you need more.
 3. **No confidential material.** Do not commit non-public tender documents, contracts, supplier quotes, prices or internal documents of any organisation. Cases in this repo are anonymised; keep them that way.
-4. **No naming and shaming.** Your tool assesses requirements and patterns, not named suppliers. Example output must not label real companies as compliant or non-compliant.
+4. **No naming and shaming.** Your tool assesses requirements and classifications, not named suppliers. Example output must not label real companies as compliant or non-compliant.
 5. **Open source.** All submitted code and rules are released under the licences below.
 6. **Language.** Documentation in this repo is primarily English. Output for buyers (requirements, question flow) may be in Dutch, because that is what goes into Dutch tenders.
 

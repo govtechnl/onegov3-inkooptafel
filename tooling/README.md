@@ -1,6 +1,6 @@
 # Tooling (optional Python starter)
 
-A small, deterministic starter. Use it, extend it, or ignore it and build in any language you like. The only hard rule is that your decision rules are explicit and testable.
+A small, deterministic starter. Use it, extend it, or ignore it and build in any language. The only hard rule is that your decision rules are explicit and testable.
 
 ## Install
 
@@ -16,17 +16,26 @@ pytest -v
 
 | Path | What it does |
 |---|---|
-| `inkooptafel/catalog.py` | Loads `data/*.yaml` and validates it against `data/schemas/` |
-| `inkooptafel/classify.py` | Maps the two axis values to one of the 10 patterns. No AI, just a lookup |
-| `inkooptafel/pve.py` | Renders a programme-of-requirements (PvE) fragment for a pattern, with a source per requirement |
-| `examples/01_vragenflow.py` | Minimal yes/no question flow, from answers to pattern to PvE fragment |
-| `examples/example-patterns.yaml` | One illustrative filled-in pattern (P03). **Example only, not advice** |
-| `tests/` | Schema checks, coverage of all 10 combinations, source references, classifier tests |
+| `inkooptafel/catalog.py` | Loads `data/*.yaml` and team files, validates them against `data/schemas/` |
+| `inkooptafel/toets.py` | The classificatietoets as code: answers in, profile out (proceskritikaliteit, B, I, V). Highest score wins for B and I; decision rules for V |
+| `inkooptafel/advies.py` | Evaluates **your** rules on a profile: combined SEAL minimum per objective and a PvE fragment with a source per requirement |
+| `examples/assessment-example.yaml` | A filled-in toets for a fictional process |
+| `examples/example-rules.yaml` | Three illustrative rules in the rules format. **Example only, not advice** |
+| `tests/` | Schema checks, BIV rule tests, an end-to-end example |
 
 ## Try it
 
 ```bash
-python -m inkooptafel.classify --kritikaliteit bedrijfskritiek --gegevens persoonsgegevens
-python -m inkooptafel.pve P03 --patterns examples/example-patterns.yaml
-python examples/01_vragenflow.py --patterns examples/example-patterns.yaml
+# Step 0-4: from answers to a profile
+python -m inkooptafel.toets examples/assessment-example.yaml
+
+# The part that does not exist yet: from profile to sovereignty advice and requirements
+python -m inkooptafel.advies examples/assessment-example.yaml --rules examples/example-rules.yaml
 ```
+
+## Where the toets needs human judgement
+
+The code only decides what the questionnaire decides. Two places need a person:
+
+- **Kern versus Ondersteunend** (proceskritikaliteit) is a judgement of the process owner. Without an `oordeel`, the outcome is `beoordeling-nodig`.
+- **"Weet ik niet"** on a V question that could change the level gives `onbekend`: find out, do not guess.

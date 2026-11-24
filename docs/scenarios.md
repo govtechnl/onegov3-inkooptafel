@@ -2,28 +2,28 @@
 
 > **Why this file exists.** These scenarios turn the brief into concrete, demo-able user stories. Each is small enough to prototype in a few hours; together they cover the Must and Should criteria.
 >
-> **How to use.** Pick one or two as your demo spine. You are not required to implement them. The systems are generic examples; your rules decide the pattern, not this file.
+> **How to use.** Pick one or two as your demo spine. You are not required to implement them. The systems are generic examples; your rules decide the outcome, not this file.
 
 ---
 
 ## 1. Five-minute classification
 
 **Persona:** Sanne.
-**Goal:** Sanne answers a handful of plain-language questions about the *zaaksysteem* she is tendering and gets a pattern, an advised level and a short justification.
+**Goal:** Sanne answers a handful of plain-language questions about the *zaaksysteem* she is tendering and gets a profile, an advised level and a short justification.
 **Covers:** M1, M2, S1, S2.
 **Bonus:** questions Sanne cannot answer herself can be forwarded to Ahmed with one click.
 
-## 2. From pattern to PvE fragment
+## 2. From profile to PvE fragment
 
 **Persona:** Sanne.
 **Goal:** Export the requirements and award criteria for the classified system as a document she can paste into the tender, each with its source and type (requirement or award criterion).
 **Covers:** M3, S1, S4.
-**Starter:** `python -m inkooptafel.pve <pattern-id>`.
+**Starter:** `python -m inkooptafel.advies <assessment> --rules <your-rules>`.
 
 ## 3. Same answers, same outcome
 
 **Persona:** Ahmed, with the CISO looking over his shoulder.
-**Goal:** Show that two people classifying the same system get the same pattern and level, and that the tool can explain every step.
+**Goal:** Show that two people classifying the same system get the same profile and level, and that the tool can explain every step.
 **Covers:** M4, S1.
 **Demo trick:** run your rule tests live.
 
@@ -36,13 +36,13 @@
 ## 5. Classifying the landscape
 
 **Persona:** Ahmed.
-**Goal:** Upload a simple list of systems (name, process, data types) and get a pattern per system, with the ones that need attention first.
+**Goal:** Upload a simple list of systems (name, process, data types) and get a profile per process, with the ones that need attention first.
 **Covers:** S2, S5; useful for the joint-procurement bonus.
 
 ## 6. Policy changes, the tool does not break
 
 **Persona:** whoever maintains the rules after the hackathon.
-**Goal:** A new law adds a minimum requirement for one pattern. Show that you change one data file, the tests tell you what changed, and the tool picks it up without code changes.
+**Goal:** A new law adds a minimum requirement for one kind of outcome. Show that you change one data file, the tests tell you what changed, and the tool picks it up without code changes.
 **Covers:** S5.
 
 ## 7. Worked case

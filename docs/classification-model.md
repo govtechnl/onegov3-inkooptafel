@@ -1,55 +1,82 @@
-# Classification model
+# Classification model: the classificatietoets
 
-The classification model comes from the work on the *gemeentelijke Uitvoeringsstrategie Cloud* (VNG), together with the DACC. Its purpose: when a municipality buys software or a digital service, it should be able to say how that system classifies and which pattern of sovereignty requirements belongs to it. The model builds on existing frameworks such as the BIO and NIS2, not on something new.
+The leading model for this challenge is the **classificatietoets** (process and data classification, steps 0 to 4), supplied by the challenge owners. It is the version that is being developed further and used in a pilot in Amsterdam. It builds on BIO2 and takes the assessment from the process down to the critical data that process needs.
 
-Machine-readable version: [`data/classification.yaml`](../data/classification.yaml) (axes) and [`data/patterns.yaml`](../data/patterns.yaml) (patterns).
+Machine-readable version: [`data/toets.yaml`](../data/toets.yaml). Code: [`tooling/inkooptafel/toets.py`](../tooling/inkooptafel/toets.py).
 
-## Structure
+## Five steps: from broad to targeted
 
-```
-Object         ->  Criteria (two axes)       ->  Pattern        ->  Measures
-(system X)         criticality x data class      2 x 5 = 10         mitigating measures
-                                                                     (Handreiking Cloud)
-```
+| Step | Name | What you do | Output |
+|---|---|---|---|
+| 0 | Proces en dienst | Determine importance and the impact of failure | Scoped process, process owner, **proceskritikaliteit**, provisional **BIV** of the process |
+| 1 | Activiteiten | Map the work and dependencies, in the order the work happens | Activities A1, A2, ... |
+| 2 | Kritieke data | Choose the critical data sets and the critical data elements (fields) | Data sets D1, D2, ... and elements D1.1, D1.2, ... |
+| 3 | Bron en taken | Record the official source, systems and responsible teams | Source, systems and teams per critical data set |
+| 4 | BIV en afspraken | Assess each critical data element on B, I and V | B, I and V per element, and agreements on management, quality and suppliers |
 
-### Axis 1: criticality of the business process (`kritikaliteit`)
+Only critical data and the most important data elements go through to step 4. That way protection, quality controls, recovery agreements and **supplier requirements** focus on the data with the highest risk.
 
-| Id | Dutch | English |
-|---|---|---|
-| `bedrijfskritiek` | Bedrijfskritiek | Business-critical |
-| `niet-kritiek` | Niet kritiek | Not critical |
+## The building blocks
 
-Use the IBD list of critical processes for municipalities to decide (see [`data/ibd/`](../data/ibd/)).
+### Proceskritikaliteit (step 0)
 
-### Axis 2: data classification (`gegevensclassificatie`)
+| Value | When |
+|---|---|
+| Kritiek | Formally designated as critical, or serious consequences after 72 hours of failure and no reliable fallback |
+| Kern | Important municipal task; consequences of failure can be absorbed temporarily |
+| Ondersteunend | Mainly supports steering, planning or management; the main task can continue for now |
+| Onbekend | Consequences still unclear; the process owner has this investigated |
 
-| Id | Dutch | English |
-|---|---|---|
-| `openbaar` | Openbaar | Public |
-| `wettelijk-gebonden` | Door wet- en regelgeving gebonden | Bound by law and regulation |
-| `persoonsgegevens` | Persoonsgegevens | Personal data |
-| `bijzondere-persoonsgegevens` | Bijzondere persoonsgegevens | Special categories of personal data |
-| `staatsgeheimen` | Staatsgeheimen | State secrets |
+GEMMA helps to type the process; the criticality decides how much attention it gets.
 
-### Patterns
+### BIV (step 0 for the process, step 4 per critical data element)
 
-| | openbaar | wettelijk-gebonden | persoonsgegevens | bijzondere-persoonsgegevens | staatsgeheimen |
-|---|---|---|---|---|---|
-| **bedrijfskritiek** | P01 | P02 | P03 | P04 | P05 |
-| **niet-kritiek** | P06 | P07 | P08 | P09 | P10 |
+- **B, beschikbaarheid (availability):** seven questions (B1 to B7), each mapped to a score of 1 to 5. A shorter acceptable outage or recovery time means a higher score.
+- **I, integriteit (integrity):** seven questions (I1 to I7), each scored 1 to 5.
+- **V, vertrouwelijkheid (confidentiality):** eight yes/no questions (V1 to V8) and decision rules that give **Openbaar**, **Vertrouwelijk** or **Geheim**.
+
+Rules that matter for your code:
+
+- For B and I the final score is the **highest** score. **Never add up, never average.**
+- B, I and V remain **separate** classifications.
+- Personal data are in principle at least Vertrouwelijk, but do not automatically get the highest level.
+- "Weet ik niet" means: find out. Do not guess.
+- The process outcome from step 0 is context for step 4, not something to copy.
+
+### From outcome to agreements
+
+The toets ends with what to discuss and record. For this challenge the last row is the important one:
+
+| What needs attention | Discuss and record |
+|---|---|
+| High availability score | Management: back-up, recovery, emergency access, continuity, recovery time |
+| High integrity score | Quality: controls, standards, corrections, source agreements |
+| High confidentiality or a sensitive signal | Management and security: access, logging, masking, control |
+| Critical data and data elements | Management: risk, protection, resources, who monitors progress |
+| **Dependency on a supplier or platform** | **Supplier and autonomy: storage location, access, export, transfer, recovery, exit and possibly a SEAL assessment** |
 
 ## What is missing, and where you come in
 
-The model classifies. It does **not** yet say which **sovereignty level** belongs to a pattern, or which **requirements** follow from it. That is the core of the challenge:
+The toets tells you **what** is critical and **how** sensitive it is. It does **not** say which sovereignty level or which supplier requirements follow. The toets is explicit about this:
 
-1. Advise a sovereignty level per pattern and justify it. See [sovereignty-levels.md](sovereignty-levels.md).
-2. Use minimum requirements from law and regulation as the floor. See [sources.md](sources.md).
-3. Translate the level into requirements and award criteria for the programme of requirements (PvE). See [procurement-context.md](procurement-context.md).
+> The SEAL level does not follow automatically from the BIV score; the assessment is about the concrete service being procured.
+
+That is the core of the challenge:
+
+1. Turn the toets into a usable tool: a question flow that produces a **profile** (proceskritikaliteit, B, I, V, supplier dependency).
+2. Design **rules** that go from that profile, plus what you know about the service being procured, to an advised sovereignty level (for example a SEAL minimum per objective). See [sovereignty-levels.md](sovereignty-levels.md).
+3. Use minimum requirements from law and regulation as the floor. See [sources.md](sources.md).
+4. Produce requirements and award criteria for the programme of requirements (PvE). See [procurement-context.md](procurement-context.md).
 
 ## Design choices you will have to make
 
-- **A system with several data classes.** Does the most sensitive class decide ("highest class wins"), or do you split the system? The example question flow in [`tooling/examples/01_vragenflow.py`](../tooling/examples/01_vragenflow.py) uses "highest class wins". You may choose differently; explain why.
-- **Is the matrix monotone?** Should a more sensitive or more critical pattern always get an equal or higher level? A test for that is a good idea.
-- **Edge cases.** State secrets are rare for municipalities. Decide whether your tool handles them or refers the user elsewhere.
+- **Process or data element?** The toets classifies both. Which one drives the supplier requirements of a tender, and how do you combine several data elements in one service?
+- **Kern versus Ondersteunend** is a judgement of the process owner. Support that judgement; do not replace it.
+- **What does "high" mean?** The toets says "hoge score" without a threshold. If your rules use one (for example B of 4 or more), state it and test it.
+- **Beyond BIV.** SEAL concerns the service: jurisdiction, operations, supply chain, exit. Which extra questions about the service does your tool ask?
 
-If you think the model itself is wrong or incomplete, say so in your pitch or open an issue. Do not change `classification.yaml` silently.
+## The earlier simplified view
+
+Before the toets was available, the challenge used a simplified matrix from the VNG *Uitvoeringsstrategie Cloud* work: business-critical or not, times five data classes (openbaar, door wet- en regelgeving gebonden, persoonsgegevens, bijzondere persoonsgegevens, staatsgeheimen), giving ten patterns linked to mitigating measures from the Handreiking Cloud. You may use it as a quick entry or a sanity check, but the toets is leading.
+
+If you think the toets is wrong or incomplete, say so in your pitch or open an issue. Do not change `data/toets.yaml` silently.

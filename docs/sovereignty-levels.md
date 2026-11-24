@@ -1,6 +1,6 @@
 # Sovereignty levels
 
-The classification model does not yet assign a sovereignty level. You advise one per pattern. This page gives you a reference scale and some guidance. It is not a prescribed answer.
+The classificatietoets does not assign a sovereignty level, and is explicit that the SEAL level does not follow automatically from the BIV score: a SEAL assessment concerns the concrete service being procured. You design that step. This page gives you a reference scale and some guidance. It is not a prescribed answer.
 
 ## Reference: the EU Cloud Sovereignty Framework (SEAL)
 
@@ -42,12 +42,14 @@ The exploration *Verkenning Soevereine Cloud* (Gartner for the Ministry of the I
 
 ## Guidance for your advice
 
-- **Per objective, not only overall.** A pattern may need a high level on data and legal sovereignty but a lower one on supply chain. The SEAL model allows that; your tool can too.
-- **Minimum requirements are the floor.** If a law or framework in [`data/sources.yaml`](../data/sources.yaml) sets a hard requirement for a pattern, your level cannot go below it.
+- **BIV is input, not the answer.** The toets tells you what is critical and how sensitive it is. Add what you need to know about the service: where it runs, who operates it, which jurisdiction applies, how exit works.
+
+- **Per objective, not only overall.** An outcome may need a high level on data and legal sovereignty but a lower one on supply chain. The SEAL model allows that; your tool can too.
+- **Minimum requirements are the floor.** If a law or framework in [`data/sources.yaml`](../data/sources.yaml) sets a hard requirement for a situation, your level cannot go below it.
 - **Proportionate, not maximal.** A higher level narrows the market and raises costs. Explain why a level is needed, not only that it is safer. See [procurement-context.md](procurement-context.md).
-- **Make it testable.** Write tests that pin your choices, for example: "P04 is never lower than P03" or "every pattern with personal data has at least one requirement sourced from `avg`".
+- **Make it testable.** Write tests that pin your choices, for example: "a higher V never gives a lower level on SOV-3" or "every outcome with personal data has at least one requirement sourced from `avg`".
 - **You may use another scale.** If you think SEAL is the wrong fit for municipal SaaS, propose a better one and justify it.
 
 ## Where to record it
 
-In your fork, fill in `sovereignty_level`, `rationale` and `requirements` per pattern in [`data/patterns.yaml`](../data/patterns.yaml), or keep your own rule files under `submissions/<team-name>/` that produce the same information.
+In your fork, write your rules under `submissions/<team-name>/` in the format of [`data/schemas/rules.schema.json`](../data/schemas/rules.schema.json): conditions on the profile, a SEAL minimum per objective, a rationale and requirements.

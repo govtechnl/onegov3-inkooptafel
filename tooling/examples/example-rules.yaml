@@ -1,0 +1,46 @@
+# ILLUSTRATIVE EXAMPLE ONLY. Not advice from the challenge owners.
+# Shows the rules format (data/schemas/rules.schema.json). Copy the structure,
+# not the content: designing these rules, and justifying them, is the challenge.
+
+rules:
+  - id: VB-PERSOONSGEGEVENS
+    when:
+      v_in: [vertrouwelijk, geheim]
+    sovereignty:
+      SOV-2: SEAL-2
+      SOV-3: SEAL-2
+    rationale: "VOORBEELD: vertrouwelijke gegevens vragen afdwingbare EU-jurisdictie over data."
+    requirements:
+      - id: VB-R1
+        type: eis
+        text: "VOORBEELD: De verwerking van persoonsgegevens is vastgelegd in een verwerkersovereenkomst."
+        source: avg
+
+  - id: VB-LEVERANCIER
+    when:
+      leveranciersafhankelijk: true
+      proceskritikaliteit_in: [kritiek, kern]
+    sovereignty:
+      SOV-4: SEAL-2
+    rationale: "VOORBEELD: bij afhankelijkheid van een leverancier voor een kern- of kritiek proces telt exit en overdracht."
+    requirements:
+      - id: VB-R2
+        type: eis
+        text: "VOORBEELD: Bij beëindiging levert de opdrachtnemer alle gegevens terug in een open, gedocumenteerd formaat, binnen een vooraf afgesproken termijn."
+        source: handreiking-exit
+      - id: VB-R3
+        type: gunningscriterium
+        text: "VOORBEELD: De mate waarin de dienst en de zeggenschap over de aanbieder niet onderworpen zijn aan extraterritoriale wetgeving van niet-Europese rechtsstelsels."
+        source: ecsf
+
+  - id: VB-HOGE-BESCHIKBAARHEID
+    when:
+      b_min: 4
+    sovereignty:
+      SOV-4: SEAL-3
+    rationale: "VOORBEELD: als uitval binnen een dag merkbaar is, moet de operatie onder EU-controle doorlopen."
+    requirements:
+      - id: VB-R4
+        type: eis
+        text: "VOORBEELD: De opdrachtnemer garandeert een hersteltijd die past bij de B-score uit de toets."
+        source: bio2

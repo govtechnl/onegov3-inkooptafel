@@ -34,5 +34,5 @@ jobs:
       - name: Smoke-test the CLI
         working-directory: tooling
         run: |
-          python -m inkooptafel.classify --kritikaliteit bedrijfskritiek --gegevens persoonsgegevens
-          python -m inkooptafel.pve P03 --patterns examples/example-patterns.yaml
+          python -m inkooptafel.toets examples/assessment-example.yaml
+          python -m inkooptafel.advies examples/assessment-example.yaml --rules examples/example-rules.yaml

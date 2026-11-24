@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/govtechnl/onegov3-inkooptafel/data/schemas/rules.schema.json",
+  "title": "Team rules: from a toets outcome to sovereignty advice and requirements",
+  "type": "object",
+  "required": ["rules"],
+  "additionalProperties": false,
+  "properties": {
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "when", "rationale"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string"},
+          "when": {
+            "type": "object",
+            "description": "All listed conditions must hold. An empty object always matches.",
+            "additionalProperties": false,
+            "properties": {
+              "proceskritikaliteit_in": {
+                "type": "array",
+                "items": {"enum": ["kritiek", "kern", "ondersteunend", "onbekend"]}
+              },
+              "b_min": {"type": "integer", "minimum": 1, "maximum": 5},
+              "i_min": {"type": "integer", "minimum": 1, "maximum": 5},
+              "v_in": {
+                "type": "array",
+                "items": {"enum": ["openbaar", "vertrouwelijk", "geheim", "onbekend"]}
+              },
+              "leveranciersafhankelijk": {"type": "boolean"}
+            }
+          },
+          "sovereignty": {
+            "type": "object",
+            "description": "Advised minimum SEAL level per sovereignty objective",
+            "propertyNames": {"pattern": "^SOV-[1-8]$"},
+            "additionalProperties": {"enum": ["SEAL-0", "SEAL-1", "SEAL-2", "SEAL-3", "SEAL-4"]}
+          },
+          "rationale": {"type": "string", "minLength": 1},
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "type", "text", "source"],
+              "additionalProperties": false,
+              "properties": {
+                "id": {"type": "string"},
+                "type": {"enum": ["eis", "gunningscriterium"]},
+                "text": {"type": "string", "minLength": 1},
+                "source": {"type": "string"},
+                "notes": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
