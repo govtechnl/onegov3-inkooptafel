@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/govtechnl/onegov3-inkooptafel/data/schemas/classification.schema.json",
+  "title": "Classification model",
+  "type": "object",
+  "required": ["model", "axes"],
+  "additionalProperties": false,
+  "properties": {
+    "model": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string"},
+        "origin": {"type": "string"},
+        "status": {"type": "string"}
+      }
+    },
+    "axes": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "label_nl", "label_en", "values"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string"},
+          "label_nl": {"type": "string"},
+          "label_en": {"type": "string"},
+          "values": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["id", "label_nl", "label_en"],
+              "additionalProperties": false,
+              "properties": {
+                "id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+                "label_nl": {"type": "string"},
+                "label_en": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

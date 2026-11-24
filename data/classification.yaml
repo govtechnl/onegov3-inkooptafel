@@ -1,0 +1,44 @@
+# Classification model (machine-readable source of truth).
+#
+# Two axes. Every combination of one value per axis is a pattern (2 x 5 = 10).
+# Patterns are listed in data/patterns.yaml.
+#
+# The model as delivered does NOT yet map patterns to a sovereignty level.
+# That mapping is the core of the challenge.
+
+model:
+  name: Classificatiemodel inkoop en soevereiniteit
+  origin: VNG Uitvoeringsstrategie Cloud, with DACC
+  status: working version, latest version to be supplied by the challenge owners
+
+axes:
+  - id: kritikaliteit
+    label_nl: Kritikaliteit bedrijfsproces
+    label_en: Criticality of the business process
+    values:
+      - id: bedrijfskritiek
+        label_nl: Bedrijfskritiek
+        label_en: Business-critical
+      - id: niet-kritiek
+        label_nl: Niet kritiek
+        label_en: Not critical
+
+  - id: gegevensclassificatie
+    label_nl: Gegevensclassificatie
+    label_en: Data classification
+    values:
+      - id: openbaar
+        label_nl: Openbaar
+        label_en: Public
+      - id: wettelijk-gebonden
+        label_nl: Door wet- en regelgeving gebonden
+        label_en: Bound by law and regulation
+      - id: persoonsgegevens
+        label_nl: Persoonsgegevens
+        label_en: Personal data
+      - id: bijzondere-persoonsgegevens
+        label_nl: Bijzondere persoonsgegevens
+        label_en: Special categories of personal data
+      - id: staatsgeheimen
+        label_nl: Staatsgeheimen
+        label_en: State secrets

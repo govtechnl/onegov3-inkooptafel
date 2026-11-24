@@ -1,0 +1,84 @@
+# The 10 classification patterns (2 criticality values x 5 data classes).
+#
+# Starter file: in your team fork, fill in per pattern
+#   sovereignty_level  your advised level (for example SEAL-0 .. SEAL-4, see docs/sovereignty-levels.md)
+#   rationale          why this level, in one or two sentences
+#   requirements       requirements or award criteria for the programme of requirements (PvE)
+#
+# Every requirement points to a source id from data/sources.yaml.
+# Example requirement:
+#   - id: P01-R1
+#     type: eis                 # eis (requirement) | gunningscriterium (award criterion)
+#     text: "De opdrachtnemer ..."
+#     source: avg
+
+patterns:
+  - id: P01
+    kritikaliteit: bedrijfskritiek
+    gegevensclassificatie: openbaar
+    sovereignty_level: null
+    rationale: null
+    requirements: []
+
+  - id: P02
+    kritikaliteit: bedrijfskritiek
+    gegevensclassificatie: wettelijk-gebonden
+    sovereignty_level: null
+    rationale: null
+    requirements: []
+
+  - id: P03
+    kritikaliteit: bedrijfskritiek
+    gegevensclassificatie: persoonsgegevens
+    sovereignty_level: null
+    rationale: null
+    requirements: []
+
+  - id: P04
+    kritikaliteit: bedrijfskritiek
+    gegevensclassificatie: bijzondere-persoonsgegevens
+    sovereignty_level: null
+    rationale: null
+    requirements: []
+
+  - id: P05
+    kritikaliteit: bedrijfskritiek
+    gegevensclassificatie: staatsgeheimen
+    sovereignty_level: null
+    rationale: null
+    requirements: []
+
+  - id: P06
+    kritikaliteit: niet-kritiek
+    gegevensclassificatie: openbaar
+    sovereignty_level: null
+    rationale: null
+    requirements: []
+
+  - id: P07
+    kritikaliteit: niet-kritiek
+    gegevensclassificatie: wettelijk-gebonden
+    sovereignty_level: null
+    rationale: null
+    requirements: []
+
+  - id: P08
+    kritikaliteit: niet-kritiek
+    gegevensclassificatie: persoonsgegevens
+    sovereignty_level: null
+    rationale: null
+    requirements: []
+
+  - id: P09
+    kritikaliteit: niet-kritiek
+    gegevensclassificatie: bijzondere-persoonsgegevens
+    sovereignty_level: null
+    rationale: null
+    requirements: []
+
+  - id: P10
+    kritikaliteit: niet-kritiek
+    gegevensclassificatie: staatsgeheimen
+    sovereignty_level: null
+    rationale: null
+    requirements: []

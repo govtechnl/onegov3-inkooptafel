@@ -1,0 +1,157 @@
+# Source catalogue (machine-readable source of truth).
+#
+# Laws, frameworks and guidance that may contain minimum requirements for
+# suppliers or data storage. Teams reference these ids from their rules, so
+# every requirement a tool produces can be traced back to a source.
+#
+# origin:
+#   icbr-werksessie : first-pass source list from the VNG "Uitvoeringsstrategie Cloud"
+#                     work session that the classification model comes from
+#   challenge-brief : additional resources listed in the OneGov #3 challenge brief
+#
+# url: null means the challenge owners still have to supply the canonical link.
+# Pull requests that add verified links are welcome.
+
+sources:
+  # Dutch law
+  - id: avg
+    name: Algemene verordening gegevensbescherming (AVG / GDPR)
+    category: nl-law
+    origin: icbr-werksessie
+    url: null
+  - id: woo
+    name: Wet open overheid (Woo)
+    category: nl-law
+    origin: icbr-werksessie
+    url: null
+  - id: archiefwet
+    name: Archiefwet
+    category: nl-law
+    origin: icbr-werksessie
+    url: null
+  - id: wwke
+    name: WWKE
+    category: nl-law
+    origin: icbr-werksessie
+    url: null
+    notes: Listed by the challenge owners as "WWKE"; full title to be confirmed.
+  - id: cbw
+    name: Cyberbeveiligingswet (Cbw, Dutch implementation of NIS2)
+    category: nl-law
+    origin: icbr-werksessie
+    url: null
+
+  # EU law and frameworks
+  - id: data-act
+    name: Data Act (EU)
+    category: eu-law
+    origin: icbr-werksessie
+    url: null
+  - id: ai-act
+    name: AI Act (EU)
+    category: eu-law
+    origin: icbr-werksessie
+    url: null
+  - id: dora
+    name: Digital Operational Resilience Act (DORA)
+    category: eu-law
+    origin: icbr-werksessie
+    url: null
+  - id: cra
+    name: Cyber Resilience Act (EU)
+    category: eu-law
+    origin: icbr-werksessie
+    url: null
+  - id: ecsf
+    name: European Cloud Sovereignty Framework (SEAL levels)
+    category: eu-framework
+    origin: icbr-werksessie
+    url: https://commission.europa.eu/document/download/09579818-64a6-4dd5-9577-446ab6219113_en?filename=Cloud-Sovereignty-Framework.pdf
+    notes: Eight sovereignty objectives (SOV-1 to SOV-8) and assurance levels SEAL-0 to SEAL-4. See docs/sovereignty-levels.md.
+  - id: cada
+    name: CaDa
+    category: eu-law
+    origin: icbr-werksessie
+    url: null
+    notes: In development ("in wording") at the time of the hackathon.
+
+  # Architecture, standards and policy
+  - id: gemma
+    name: GEMMA (Gemeentelijke Model Architectuur)
+    category: framework
+    origin: icbr-werksessie
+    url: null
+  - id: nora
+    name: NORA (Nederlandse Overheid Referentie Architectuur)
+    category: framework
+    origin: icbr-werksessie
+    url: null
+  - id: bio2
+    name: Baseline Informatiebeveiliging Overheid 2 (BIO2)
+    category: framework
+    origin: icbr-werksessie
+    url: null
+  - id: rijks-cloudbeleid
+    name: Rijksbreed cloudbeleid (revised)
+    category: policy
+    origin: icbr-werksessie
+    url: null
+  - id: dpia-framework
+    name: DPIA framework
+    category: framework
+    origin: icbr-werksessie
+    url: null
+  - id: ibd-plc
+    name: Proportioneel Leveranciers- en Contractmanagement (PLC), IBD
+    category: framework
+    origin: icbr-werksessie
+    url: https://www.informatiebeveiligingsdienst.nl/plc-proportioneel-leveranciers-en-contractmanagement/
+
+  # Guidance
+  - id: handreiking-cloud
+    name: Handreiking Cloud
+    category: guidance
+    origin: icbr-werksessie
+    url: null
+    notes: Source of the mitigating measures that belong to each classification pattern.
+  - id: handreikingen-ict-sourcing
+    name: Handreikingen ICT Sourcing
+    category: guidance
+    origin: icbr-werksessie
+    url: null
+  - id: handreiking-exit
+    name: Handreiking exitstrategie en tijdlijnen / technologierisico's
+    category: guidance
+    origin: icbr-werksessie
+    url: null
+
+  # Practice
+  - id: hent-amsterdam
+    name: HenT tender (Hosting en Technisch applicatiebeheer), gemeente Amsterdam
+    category: practice
+    origin: icbr-werksessie
+    url: null
+
+  # Additional resources from the challenge brief
+  - id: ibd-bio2-kritieke-processen
+    name: BIO2 kritieke processen gemeenten (IBD)
+    category: dataset
+    origin: challenge-brief
+    url: https://www.informatiebeveiligingsdienst.nl/product/bio2-kritieke-processen-gemeenten/
+    notes: Use on axis 1 (criticality). Whether the list may be redistributed in this repo is being checked.
+  - id: gibit
+    name: GIBIT (Gemeentelijke Inkoopvoorwaarden bij IT)
+    category: procurement
+    origin: challenge-brief
+    url: https://vng.nl/artikelen/gebruik-vng-model-algemene-inkoopvoorwaarden-of-gibit
+  - id: vng-bestek-cloud
+    name: VNG bestek cloud-inkoop (PaaS / IaaS)
+    category: procurement
+    origin: challenge-brief
+    url: https://vng.nl/artikelen/digitale-autonomie-wat-kunnen-gemeenten-nu-al-doen
+  - id: dacc-volwassenheidsmodel
+    name: Volwassenheidsmodel Digitale Autonomie (DACC)
+    category: framework
+    origin: challenge-brief
+    url: https://vng.nl/nieuws/nieuw-model-geeft-gemeenten-meer-grip-op-digitale-autonomie
+    notes: Assesses digital autonomy at the level of primary processes. Linking to it is a "Could" bonus.
