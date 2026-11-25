@@ -34,7 +34,7 @@ The full brief is in [CHALLENGE.md](CHALLENGE.md). New teams start with [START_H
 | [data/sources.yaml](data/sources.yaml) | Laws, frameworks and guidance with possible minimum requirements | Available (links for most sources; the rest follow) |
 | [data/schemas/](data/schemas/) | JSON Schemas for the catalogues, for answers to the toets and for your rules | Available |
 | [data/ibd/](data/ibd/) | IBD list of critical processes for municipalities | Being prepared |
-| [cases/](cases/) | Anonymised procurement cases to demonstrate your tool on | Being prepared |
+| [cases/](cases/) | Procurement cases to demonstrate your tool on | One case available (HenT, Amsterdam); GGD case follows |
 | [tooling/](tooling/) | Optional Python starter: the toets as code, a rules engine and PvE renderer, examples, tests | Available |
 | [submissions/](submissions/) | Where your team's work goes if you build in a fork of this repository | Empty |
 | [resources/](resources/) | Source material as delivered by the challenge owners | Being prepared |

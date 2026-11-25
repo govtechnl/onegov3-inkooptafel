@@ -23,7 +23,7 @@ This is a **first pass** compiled by the challenge owners from the VNG *Uitvoeri
 | `dora` | [Digital Operational Resilience Act (DORA)](https://eur-lex.europa.eu/eli/reg/2022/2554/oj) |
 | `cra` | [Cyber Resilience Act (EU)](https://eur-lex.europa.eu/eli/reg/2024/2847/oj) |
 | `ecsf` | [European Cloud Sovereignty Framework (SEAL levels) (see [sovereignty-levels.md](sovereignty-levels.md))](https://commission.europa.eu/document/download/09579818-64a6-4dd5-9577-446ab6219113_en?filename=Cloud-Sovereignty-Framework.pdf) |
-| `cada` | Cloud and AI Development Act (CADA, EU proposal) |
+| `cada` | [Cloud and AI Development Act (CADA, EU proposal)](https://digital-strategy.ec.europa.eu/en/library/proposal-cloud-and-ai-development-act-cada) |
 
 ## Architecture, standards and policy
 
@@ -40,15 +40,15 @@ This is a **first pass** compiled by the challenge owners from the VNG *Uitvoeri
 
 | Id | Source |
 |---|---|
-| `handreiking-cloud` | Handreiking Cloud |
-| `handreikingen-ict-sourcing` | Handreikingen ICT Sourcing |
+| `handreiking-cloud` | [Handreiking Cloud](https://vng.nl/sites/default/files/2026-07/handreiking-cloud-voor-gemeenten.pdf) |
+| `handreikingen-ict-sourcing` | [Rijksbrede handreiking IT-sourcing (BZK)](https://www.digitaleoverheid.nl/wp-content/uploads/sites/8/2026/02/85096-BZK-Rijksbrede-Handreiking-IT-sourcing-TG.pdf) |
 | `handreiking-exit` | Handreiking exitstrategie en tijdlijnen / technologierisico's |
 
 ## Practice
 
 | Id | Source |
 |---|---|
-| `hent-amsterdam` | HenT tender (Hosting en Technisch applicatiebeheer), gemeente Amsterdam |
+| `hent-amsterdam` | [HenT tender (Hosting en Technisch applicatiebeheer), gemeente Amsterdam](https://www.tenderned.nl/aankondigingen/overzicht/391737) |
 
 ## Additional resources from the challenge brief
 
@@ -59,7 +59,7 @@ This is a **first pass** compiled by the challenge owners from the VNG *Uitvoeri
 | `vng-bestek-cloud` | [VNG handreiking Eisen aan gemeentelijke cloudvoorzieningen (with PvE and award criteria, incl. PaaS / IaaS)](https://vng.nl/sites/default/files/2026-07/handreiking-cloud-voor-gemeenten.pdf) |
 | `dacc-volwassenheidsmodel` | [Volwassenheidsmodel Digitale Autonomie (DACC)](https://vng.nl/nieuws/nieuw-model-geeft-gemeenten-meer-grip-op-digitale-autonomie) |
 | `toezichthouders-digitale-autonomie` | [De route naar digitale autonomie (position paper ACM, AFM, AP, DNB and RDI)](https://www.acm.nl/system/files/documents/de-route-naar-digitale-autonomie.pdf) |
-| `quickscan-soevereiniteit` | Quick scan soevereiniteit (Gemeente Venlo / VNG) |
+| `quickscan-soevereiniteit` | [Quick scan soevereiniteit (Gemeente Venlo / VNG)](https://vng.nl/artikelen/digitale-autonomie-wat-kunnen-gemeenten-nu-al-doen) |
 | `bzk-referentiekader` | Referentiekader digitale autonomie (BZK) |
 | `ams-inkooptool-lijst` | List from the prototype procurement tool (AMS Institute / Amsterdam) |
 
