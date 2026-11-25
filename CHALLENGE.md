@@ -4,7 +4,7 @@
 >
 > *Is this system business-critical? What data does it hold? And what should you then require from your supplier? You build the tool that answers that in five minutes.*
 >
-> **Challenge owners:** Jacco Brouwer (VNG Realisatie), Thijs Turel (DACC / AMS Institute)
+> **Challenge owners:** Jacco Brouwer (VNG Realisatie), Thijs Turèl (DACC / AMS Institute)
 > **Contact:** [hack@govtechnl.nl](mailto:hack@govtechnl.nl)
 
 This is an English working translation of the Dutch challenge brief. The authoritative version is the Dutch brief on Alkemio.
@@ -117,15 +117,17 @@ Teams are judged by an expert jury with expertise in digital autonomy, procureme
 
 ## Submission
 
-Submissions go through **Alkemio**, the central submission and review platform for OneGov. The link to the challenge space follows.
+Submissions go through [Alkemio](https://alkem.io/onegov-hackathon), the central submission and review platform for OneGov.
+
+**Deadline: Thursday 10 December 2026, 14:00.**
 
 Each team submits, via Alkemio:
 
-1. A **link to the team's Pull Request** on this repository, one PR per team (see [CONTRIBUTING.md](CONTRIBUTING.md)).
+1. A **link to your public repository** (your fork of this repository, or your own), with an open source licence and a README that says how to run your work.
 2. The **worked procurement case** (classification, advised level, requirements).
 3. The **pitch deck** (max. 10 slides, PDF or link).
 
-The Alkemio submission is what the jury scores during the hackathon. The Pull Request is still required: it is leading for the post-hackathon review.
+The Alkemio submission is your submission: the jury scores what is in Alkemio. A Pull Request into this repository is welcome but optional.
 
 ## Why join
 
@@ -139,4 +141,4 @@ The Alkemio submission is what the jury scores during the hackathon. The Pull Re
 
 The tools and rules produced during this hackathon are published as open source. Use in real tenders depends on further substantive and legal review by the challenge owners. This challenge is an innovation exercise; outcomes are not legal advice.
 
-Challenge owners: Jacco Brouwer (VNG Realisatie) · Thijs Turel (DACC / AMS Institute) · Questions: [hack@govtechnl.nl](mailto:hack@govtechnl.nl)
+Challenge owners: Jacco Brouwer (VNG Realisatie) · Thijs Turèl (DACC / AMS Institute) · Questions: [hack@govtechnl.nl](mailto:hack@govtechnl.nl)

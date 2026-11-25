@@ -5,7 +5,7 @@ Machine-readable starter data. YAML is the source of truth; the JSON Schemas in 
 | File | What it holds | Status |
 |---|---|---|
 | [`toets.yaml`](toets.yaml) | The classificatietoets: five steps, proceskritikaliteit, all B, I and V questions with scores and decision rules, follow-up topics | Available (version in use in an Amsterdam pilot) |
-| [`sources.yaml`](sources.yaml) | Laws, frameworks and guidance that may contain minimum requirements | Available (links being added) |
+| [`sources.yaml`](sources.yaml) | Laws, frameworks and guidance that may contain minimum requirements | Available (links for most sources; the rest follow) |
 | [`ibd/`](ibd/) | IBD list of critical processes for municipalities | Being prepared |
 
 ## Schemas for team files

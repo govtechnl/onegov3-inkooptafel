@@ -9,7 +9,7 @@
 #                     work session that the classification model comes from
 #   challenge-brief : additional resources listed in the OneGov #3 challenge brief
 #
-# url: null means the challenge owners still have to supply the canonical link.
+# url: null means the canonical public link is not known yet (challenge owners to supply).
 # Pull requests that add verified links are welcome.
 
 sources:
@@ -18,50 +18,53 @@ sources:
     name: Algemene verordening gegevensbescherming (AVG / GDPR)
     category: nl-law
     origin: icbr-werksessie
-    url: null
+    url: https://eur-lex.europa.eu/eli/reg/2016/679/oj
   - id: woo
     name: Wet open overheid (Woo)
     category: nl-law
     origin: icbr-werksessie
-    url: null
+    url: https://wetten.overheid.nl/BWBR0045754
   - id: archiefwet
     name: Archiefwet
     category: nl-law
     origin: icbr-werksessie
-    url: null
+    url: https://zoek.officielebekendmakingen.nl/stb-2026-149.html
+    notes: "Archiefwet 2026 (Staatsblad 2026, 149) replaces the Archiefwet 1995 (https://wetten.overheid.nl/BWBR0007376). Check which one applies on the date of your case."
   - id: wwke
-    name: WWKE
+    name: "Wet weerbaarheid kritieke entiteiten (Wwke, Dutch implementation of the EU CER directive)"
     category: nl-law
     origin: icbr-werksessie
-    url: null
-    notes: Listed by the challenge owners as "WWKE"; full title to be confirmed.
+    url: https://zoek.officielebekendmakingen.nl/kst-36765-3.html
+    notes: "In force since 15 August 2026, together with the Cbw. Link: explanatory memorandum\
+  \ (Kamerstuk 36 765, nr. 3)."
   - id: cbw
-    name: Cyberbeveiligingswet (Cbw, Dutch implementation of NIS2)
+    name: "Cyberbeveiligingswet (Cbw, Dutch implementation of NIS2)"
     category: nl-law
     origin: icbr-werksessie
-    url: null
+    url: https://www.eerstekamer.nl/wetsvoorstel/36764_cyberbeveiligingswet
+    notes: In force since 15 August 2026. For the government sector the duty of care is filled in with BIO2.
 
   # EU law and frameworks
   - id: data-act
     name: Data Act (EU)
     category: eu-law
     origin: icbr-werksessie
-    url: null
+    url: https://eur-lex.europa.eu/eli/reg/2023/2854/oj
   - id: ai-act
     name: AI Act (EU)
     category: eu-law
     origin: icbr-werksessie
-    url: null
+    url: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
   - id: dora
     name: Digital Operational Resilience Act (DORA)
     category: eu-law
     origin: icbr-werksessie
-    url: null
+    url: https://eur-lex.europa.eu/eli/reg/2022/2554/oj
   - id: cra
     name: Cyber Resilience Act (EU)
     category: eu-law
     origin: icbr-werksessie
-    url: null
+    url: https://eur-lex.europa.eu/eli/reg/2024/2847/oj
   - id: ecsf
     name: European Cloud Sovereignty Framework (SEAL levels)
     category: eu-framework
@@ -69,40 +72,41 @@ sources:
     url: https://commission.europa.eu/document/download/09579818-64a6-4dd5-9577-446ab6219113_en?filename=Cloud-Sovereignty-Framework.pdf
     notes: Eight sovereignty objectives (SOV-1 to SOV-8) and assurance levels SEAL-0 to SEAL-4. See docs/sovereignty-levels.md.
   - id: cada
-    name: CaDa
+    name: "Cloud and AI Development Act (CADA, EU proposal)"
     category: eu-law
     origin: icbr-werksessie
     url: null
-    notes: In development ("in wording") at the time of the hackathon.
+    notes: In development at the time of the hackathon. Proposes sovereignty levels for cloud services.
 
   # Architecture, standards and policy
   - id: gemma
     name: GEMMA (Gemeentelijke Model Architectuur)
     category: framework
     origin: icbr-werksessie
-    url: null
+    url: https://www.gemmaonline.nl
   - id: nora
     name: NORA (Nederlandse Overheid Referentie Architectuur)
     category: framework
     origin: icbr-werksessie
-    url: null
+    url: https://www.noraonline.nl
   - id: bio2
     name: Baseline Informatiebeveiliging Overheid 2 (BIO2)
     category: framework
     origin: icbr-werksessie
-    url: null
+    url: https://www.bio-overheid.nl
+    notes: "Version 1.3 published in Staatscourant 2026, 7416."
   - id: rijks-cloudbeleid
-    name: Rijksbreed cloudbeleid (revised)
+    name: Rijksbreed cloudbeleid (revision of 3 July 2026)
     category: policy
     origin: icbr-werksessie
-    url: null
+    url: https://www.tweedekamer.nl/downloads/document?id=2026D35295
   - id: dpia-framework
     name: DPIA framework
     category: framework
     origin: icbr-werksessie
     url: null
   - id: ibd-plc
-    name: Proportioneel Leveranciers- en Contractmanagement (PLC), IBD
+    name: "Proportioneel Leveranciers- en Contractmanagement (PLC), IBD"
     category: framework
     origin: icbr-werksessie
     url: https://www.informatiebeveiligingsdienst.nl/plc-proportioneel-leveranciers-en-contractmanagement/
@@ -113,21 +117,21 @@ sources:
     category: guidance
     origin: icbr-werksessie
     url: null
-    notes: Source of mitigating measures for cloud services.
+    notes: Source of mitigating measures for cloud services. Possibly the same VNG handreiking as vng-bestek-cloud; challenge owners to confirm.
   - id: handreikingen-ict-sourcing
     name: Handreikingen ICT Sourcing
     category: guidance
     origin: icbr-werksessie
     url: null
   - id: handreiking-exit
-    name: Handreiking exitstrategie en tijdlijnen / technologierisico's
+    name: "Handreiking exitstrategie en tijdlijnen / technologierisico's"
     category: guidance
     origin: icbr-werksessie
     url: null
 
   # Practice
   - id: hent-amsterdam
-    name: HenT tender (Hosting en Technisch applicatiebeheer), gemeente Amsterdam
+    name: "HenT tender (Hosting en Technisch applicatiebeheer), gemeente Amsterdam"
     category: practice
     origin: icbr-werksessie
     url: null
@@ -145,13 +149,43 @@ sources:
     origin: challenge-brief
     url: https://vng.nl/artikelen/gebruik-vng-model-algemene-inkoopvoorwaarden-of-gibit
   - id: vng-bestek-cloud
-    name: VNG bestek cloud-inkoop (PaaS / IaaS)
+    name: "VNG handreiking Eisen aan gemeentelijke cloudvoorzieningen (with PvE and award criteria,\
+  \ incl. PaaS / IaaS)"
     category: procurement
     origin: challenge-brief
-    url: https://vng.nl/artikelen/digitale-autonomie-wat-kunnen-gemeenten-nu-al-doen
+    url: https://vng.nl/sites/default/files/2026-07/handreiking-cloud-voor-gemeenten.pdf
+    notes: "Published by VNG in July 2026, developed with the DACC. Annexes include BBN security\
+  \ levels, GEMMA sovereignty levels, a programme of requirements (PvE) and award\
+  \ criteria (EMVI)."
   - id: dacc-volwassenheidsmodel
     name: Volwassenheidsmodel Digitale Autonomie (DACC)
     category: framework
     origin: challenge-brief
     url: https://vng.nl/nieuws/nieuw-model-geeft-gemeenten-meer-grip-op-digitale-autonomie
-    notes: Assesses digital autonomy at the level of primary processes. Linking to it is a "Could" bonus.
+    notes: "Assesses digital autonomy at the level of primary processes. Linking to it is a \"\
+  Could\" bonus."
+  - id: toezichthouders-digitale-autonomie
+    name: "De route naar digitale autonomie (position paper ACM, AFM, AP, DNB and RDI)"
+    category: policy
+    origin: challenge-brief
+    url: https://www.acm.nl/system/files/documents/de-route-naar-digitale-autonomie.pdf
+    notes: The July 2026 call by five regulators to weigh digital autonomy in IT procurement.
+  - id: quickscan-soevereiniteit
+    name: Quick scan soevereiniteit (Gemeente Venlo / VNG)
+    category: procurement
+    origin: challenge-brief
+    url: null
+    notes: Checks the offer of IT suppliers. Availability for teams still to be confirmed.
+  - id: bzk-referentiekader
+    name: Referentiekader digitale autonomie (BZK)
+    category: framework
+    origin: challenge-brief
+    url: null
+    notes: Definitions and technical aspects of autonomy and sovereignty. Whether it has been published is still to be confirmed.
+  - id: ams-inkooptool-lijst
+    name: List from the prototype procurement tool (AMS Institute / Amsterdam)
+    category: dataset
+    origin: challenge-brief
+    url: null
+    notes: "Teams get the list that came out of an earlier tested prototype, not the tool itself.\
+  \ Follows."

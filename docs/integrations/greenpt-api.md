@@ -16,7 +16,9 @@
 
 ## Practical notes
 
-- **Access.** Ask the organisers at [hack@govtechnl.nl](mailto:hack@govtechnl.nl) for credentials.
+- **Access.** Every participant can claim free API credits through GreenPT's sign-up link, shared on [Alkemio](https://alkem.io/onegov-hackathon) and at the kick-off. Documentation: [docs.greenpt.ai](https://docs.greenpt.ai/).
 - **Reproducibility.** Pin a model version and log prompts and responses where they influence what the user sees.
 
-If your submission uses GreenPT or another LLM, note in the PR description **where** and **why**.
+If your submission uses GreenPT or another LLM, note in your README and your Alkemio submission **where** and **why**.
+
+GreenPT awards a bonus prize to a team that makes good use of its API; GreenPT selects the winner. See [EVENT.md](../../EVENT.md#prizes).

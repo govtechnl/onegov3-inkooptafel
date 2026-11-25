@@ -2,13 +2,18 @@
 
 > *From a classification model to requirements that go straight into the tender.*
 
-This repository hosts the challenge brief, supporting documents, machine-readable starter data and optional tooling for challenge 2 of **OneGov #3**, part of the OneGov Hackathon Series hosted by [GovTech NL](https://govtechnl.nl), with challenge owners **DACC** (Digitale Autonomie Competentiecentrum) and **VNG Realisatie**.
+This repository hosts the challenge brief, supporting documents, machine-readable starter data and optional tooling for challenge 2 of **OneGov #3**, part of the OneGov Hackathon Series hosted by [GovTechNL](https://govtechnl.nl), with challenge owners **DACC** (Digitale Autonomie Competentiecentrum) and **VNG Realisatie**.
 
 - **Theme:** Digital autonomy and sovereignty
 - **Date:** 9-10 December 2026
 - **Location:** The Hague Tech, Den Haag
-- **Challenge owners:** Jacco Brouwer (VNG Realisatie), Thijs Turel (DACC / AMS Institute)
+- **Challenge owners:** Jacco Brouwer (VNG Realisatie), Thijs Turèl (DACC / AMS Institute)
+- **Tech partner:** [GreenPT](https://greenpt.nl/)
+- **Community, teams and submissions:** [alkem.io/onegov-hackathon](https://alkem.io/onegov-hackathon)
 - **Contact:** [hack@govtechnl.nl](mailto:hack@govtechnl.nl)
+- **Submission deadline:** Thursday 10 December 2026, 14:00, on [Alkemio](https://alkem.io/onegov-hackathon)
+- **Programme, prizes, judging and help:** [EVENT.md](EVENT.md)
+- **Organised by:** GovTechNL with Digicampus, The Hague Tech, VNG Realisatie, Provincie Zuid-Holland, Platform AI & Overheid and Gemeente Den Haag
 
 ## The challenge in one paragraph
 
@@ -26,12 +31,12 @@ The full brief is in [CHALLENGE.md](CHALLENGE.md). New teams start with [START_H
 | [START_HERE.md](START_HERE.md) | Step-by-step start for teams | Available |
 | [docs/](docs/) | Classificatietoets, sovereignty levels, sources, rules-as-code guidance, procurement context, personas, scenarios, judging criteria, glossary | Available |
 | [data/toets.yaml](data/toets.yaml) | The classificatietoets: steps 0-4, process criticality, all BIV questions, scores and decision rules | Available |
-| [data/sources.yaml](data/sources.yaml) | Laws, frameworks and guidance with possible minimum requirements | Available (links being added) |
+| [data/sources.yaml](data/sources.yaml) | Laws, frameworks and guidance with possible minimum requirements | Available (links for most sources; the rest follow) |
 | [data/schemas/](data/schemas/) | JSON Schemas for the catalogues, for answers to the toets and for your rules | Available |
 | [data/ibd/](data/ibd/) | IBD list of critical processes for municipalities | Being prepared |
 | [cases/](cases/) | Anonymised procurement cases to demonstrate your tool on | Being prepared |
 | [tooling/](tooling/) | Optional Python starter: the toets as code, a rules engine and PvE renderer, examples, tests | Available |
-| [submissions/](submissions/) | Where your team's work lands in your Pull Request | Empty |
+| [submissions/](submissions/) | Where your team's work goes if you build in a fork of this repository | Empty |
 | [resources/](resources/) | Source material as delivered by the challenge owners | Being prepared |
 
 ## Quick start
@@ -69,11 +74,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md#licensing-of-contributions) for the canoni
 
 ## Contributing
 
-Issues and pull requests are welcome, see [CONTRIBUTING.md](CONTRIBUTING.md). During the hackathon the rule is **one PR per team**.
+Issues and pull requests are welcome, see [CONTRIBUTING.md](CONTRIBUTING.md). Team submissions go through [Alkemio](https://alkem.io/onegov-hackathon); a Pull Request from your team is welcome but optional.
 
 ## Submission
 
-Submissions go through **Alkemio**. Each team submits a link to its Pull Request on this repo, the worked procurement case, and the pitch deck. See [CHALLENGE.md](CHALLENGE.md#submission).
+Submit on [Alkemio](https://alkem.io/onegov-hackathon) before **Thursday 10 December 2026, 14:00**, with a link to your public repository (your fork or your own), a short explanation of your approach, assumptions and limitations, and your pitch deck. A Pull Request into this repository is optional. See [CHALLENGE.md](CHALLENGE.md#submission) and [EVENT.md](EVENT.md#submission).
 
 ## Disclaimer
 
