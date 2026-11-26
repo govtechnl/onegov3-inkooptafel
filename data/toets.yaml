@@ -87,6 +87,13 @@ biv:
   beschikbaarheid:
     question: Hoe lang kan het proces of het gegeven zonder informatie functioneren voordat de dienstverlening of continuiteit wordt geraakt?
     note: Een kortere toegestane uitval of hersteltijd betekent een hogere B-score.
+    bio2_advice:
+      # From the author's Excel template (Template_Beschikbaarheid), per final B score.
+      5: De BIO2 volgen voor extra beschikbaarheidsmaatregelen, en een risicoanalyse uitvoeren.
+      4: De BIO2 volgen voor extra beschikbaarheidsmaatregelen, en een risicoanalyse uitvoeren.
+      3: De beschikbaarheidsmaatregelen uit de BIO2 kunnen voldoende zijn; voer eventueel een risicoanalyse uit.
+      2: De beschikbaarheidsmaatregelen uit de BIO2 zijn voldoende.
+      1: Minimale beschikbaarheidseis; enkele maatregelen zodat uitval niet langer dan twee weken duurt.
     duration_choices: &duration
       uren: 5
       dag-deel: 4
@@ -136,6 +143,13 @@ biv:
   integriteit:
     question: Wat zijn de gevolgen als informatie onjuist, onvolledig, niet betrouwbaar of niet authentiek is? Beoordeel ook fouten en ongeautoriseerde wijzigingen.
     note: Score per vraag direct op de schaal 1-5.
+    bio2_advice:
+      # From the author's Excel template (Template_Integriteit), per final I score.
+      5: De BIO2 en een aanvullende risicoanalyse gebruiken om extra integriteitsmaatregelen te bepalen.
+      4: De BIO2 en een aanvullende risicoanalyse gebruiken om extra integriteitsmaatregelen te bepalen.
+      3: De BIO2-basismaatregelen voor gemeenten kunnen worden gebruikt.
+      2: Alleen de overheidsmaatregelen uit de BIO2 kunnen voldoende zijn.
+      1: Zeer lage integriteitseis; er kunnen nog enkele maatregelen worden gekozen.
     questions:
       - id: I1
         topic: "Managementbeslissingen"

@@ -48,3 +48,9 @@ def test_example_rules_point_to_known_sources():
     for rule in catalog.load_yaml(EXAMPLES / "example-rules.yaml")["rules"]:
         for req in rule.get("requirements", []):
             assert req["source"] in known, f"{req['id']}: unknown source {req['source']!r}"
+
+
+def test_bio2_advice_covers_every_score():
+    biv = catalog.load("toets")["biv"]
+    for block in ("beschikbaarheid", "integriteit"):
+        assert set(biv[block]["bio2_advice"]) == {1, 2, 3, 4, 5}
