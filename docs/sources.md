@@ -61,7 +61,9 @@ This is a **first pass** compiled by the challenge owners from the VNG *Uitvoeri
 | `toezichthouders-digitale-autonomie` | [De route naar digitale autonomie (position paper ACM, AFM, AP, DNB and RDI)](https://www.acm.nl/system/files/documents/de-route-naar-digitale-autonomie.pdf) |
 | `quickscan-soevereiniteit` | [Quick scan soevereiniteit (Gemeente Venlo / VNG)](https://vng.nl/artikelen/digitale-autonomie-wat-kunnen-gemeenten-nu-al-doen) |
 | `bzk-referentiekader` | Referentiekader digitale autonomie (BZK) |
-| `ams-inkooptool-lijst` | List from the prototype procurement tool (AMS Institute / Amsterdam) |
+| `ams-inkooptool-lijst` | Requirement library of the DACC procurement-requirements tool. Not shared with teams; used as a checklist for the jury. See [requirements.md](requirements.md) |
+| `pianoo` | [PIANOo Expertisecentrum Aanbesteden](https://www.pianoo.nl/) |
+| `dictu-toetsingsinstrument` | [Toetsingsinstrument Soevereiniteit Clouddiensten (DICTU)](https://www.dictu.nl/sites/default/files/bestanden/website/DICTU%20Toetsingsinstrument%20Soevereiniteit%20Clouddiensten%20v1.0.1.pdf) |
 
 ## How to work with these sources
 

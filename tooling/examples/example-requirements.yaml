@@ -1,0 +1,67 @@
+# ILLUSTRATIVE EXAMPLE ONLY. Not the requirement library of the DACC and not advice.
+# Shows the format (data/schemas/requirements.schema.json): a requirement belongs to
+# one or more SEAL levels and applies only when the scope conditions hold. Building a
+# real library from public sources, and deciding what applies when, is the challenge.
+
+requirements:
+  - id: VB-EXIT
+    levels: [SEAL-1, SEAL-2, SEAL-3, SEAL-4]
+    sov: [SOV-4]
+    type: eis
+    title: "VOORBEELD: gegevens terug bij exit"
+    text: "VOORBEELD: Bij beëindiging levert de opdrachtnemer alle gegevens terug in een open, gedocumenteerd formaat, binnen een vooraf afgesproken termijn."
+    applies_when:
+      leverancier_beheert_dienst: true
+    rationale: "Alleen zinvol als de leverancier gegevens van de opdrachtgever beheert."
+    source: handreiking-exit
+
+  - id: VB-EER
+    levels: [SEAL-2, SEAL-3, SEAL-4]
+    sov: [SOV-3]
+    type: eis
+    title: "VOORBEELD: verwerking binnen de EER"
+    text: "VOORBEELD: Persoonsgegevens worden uitsluitend binnen de EER opgeslagen en verwerkt."
+    applies_when:
+      persoonsgegevens: true
+      leverancier_beheert_dienst: true
+    rationale: "Geldt als de leverancier persoonsgegevens verwerkt."
+    source: avg
+
+  - id: VB-SLEUTELS
+    levels: [SEAL-3, SEAL-4]
+    sov: [SOV-3]
+    type: eis
+    title: "VOORBEELD: sleutelbeheer bij de opdrachtgever"
+    text: "VOORBEELD: De sleutels voor versleuteling van hooggerubriceerde gegevens staan onder beheer van de opdrachtgever."
+    applies_when:
+      hooggerubriceerd: true
+      leverancier_beheert_dienst: true
+    source: ecsf
+
+  - id: VB-EU-BEHEER
+    levels: [SEAL-3, SEAL-4]
+    sov: [SOV-4]
+    type: eis
+    title: "VOORBEELD: beheer vanuit de EU"
+    text: "VOORBEELD: Beheer en ondersteuning van de dienst worden uitgevoerd vanuit de EU."
+    applies_when:
+      cloud: true
+    source: ecsf
+
+  - id: VB-AI-TRAINING
+    levels: [SEAL-2, SEAL-3, SEAL-4]
+    sov: [SOV-3]
+    type: eis
+    title: "VOORBEELD: geen training op gegevens van de opdrachtgever"
+    text: "VOORBEELD: Gegevens van de opdrachtgever worden niet gebruikt om AI-modellen te trainen of te verbeteren."
+    applies_when:
+      ai: true
+    source: ai-act
+
+  - id: VB-OPEN-STANDAARDEN
+    levels: [SEAL-2, SEAL-3, SEAL-4]
+    sov: [SOV-6]
+    type: gunningscriterium
+    title: "VOORBEELD: open standaarden"
+    text: "VOORBEELD: De mate waarin de dienst open standaarden gebruikt voor koppelingen en gegevensexport."
+    source: nora

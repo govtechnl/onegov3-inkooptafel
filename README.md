@@ -17,9 +17,9 @@ This repository hosts the challenge brief, supporting documents, machine-readabl
 
 ## The challenge in one paragraph
 
-There is plenty of policy on digital autonomy, but it disappears at the procurement table because nobody can make it concrete. Not every system needs the same level of autonomy. The **classificatietoets**, in use in an Amsterdam pilot, takes a process down to its critical data and scores **process criticality** and **availability, integrity and confidentiality (BIV)**. What is missing is the step from that outcome to a **sovereignty level** and **requirements a buyer can put in the tender**.
+There is plenty of policy on digital autonomy, but it disappears at the procurement table because nobody can make it concrete. Not every system needs the same level of autonomy. The DACC's procurement-requirements tool determines an indicative **SEAL level** from a system's criticality and data classification, and then shows **every** requirement for that level. What is missing is the step after that: a requirement set that also fits **what is actually being procured**. A small procurement for one module, on a high SEAL level, does not need the full list.
 
-**How do we turn that toets into a tool buyers and information managers can use tomorrow: classify a system, advise a well-founded sovereignty level, and get requirements that go straight into the tender documents?**
+**How do we give a buyer the requirements that fit their procurement: matched not only to the SEAL level, but also to what is being bought, with an explanation for every requirement that is left out?**
 
 The full brief is in [CHALLENGE.md](CHALLENGE.md). New teams start with [START_HERE.md](START_HERE.md).
 
@@ -29,15 +29,15 @@ The full brief is in [CHALLENGE.md](CHALLENGE.md). New teams start with [START_H
 |---|---|---|
 | [CHALLENGE.md](CHALLENGE.md) | Full challenge brief (English working translation of the Dutch original) | Available |
 | [START_HERE.md](START_HERE.md) | Step-by-step start for teams | Available |
-| [docs/](docs/) | Classificatietoets, sovereignty levels, sources, rules-as-code guidance, procurement context, personas, scenarios, judging criteria, glossary | Available |
+| [docs/](docs/) | Requirement libraries and scope, classificatietoets, sovereignty levels, sources, rules-as-code guidance, procurement context, personas, scenarios, judging criteria, glossary | Available |
 | [data/toets.yaml](data/toets.yaml) | The classificatietoets: steps 0-4, process criticality, all BIV questions, scores and decision rules | Available |
 | [data/sources.yaml](data/sources.yaml) | Laws, frameworks and guidance with possible minimum requirements | Available (links for most sources; the rest follow) |
-| [data/schemas/](data/schemas/) | JSON Schemas for the catalogues, for answers to the toets and for your rules | Available |
+| [data/schemas/](data/schemas/) | JSON Schemas for the catalogues, answers to the toets, your rules, a requirement library and a procurement scope | Available |
 | [data/ibd/](data/ibd/) | IBD list of critical processes for municipalities | Being prepared |
-| [cases/](cases/) | Procurement cases to demonstrate your tool on | One case available (HenT, Amsterdam); GGD case follows |
-| [tooling/](tooling/) | Optional Python starter: the toets as code, a rules engine and PvE renderer, examples, tests | Available |
+| [cases/](cases/) | Four procurement cases of different scope to demonstrate your tool on | Available |
+| [tooling/](tooling/) | Optional Python starter: the toets as code, a rules engine, a scope-based requirement selection, examples, tests | Available |
 | [submissions/](submissions/) | Where your team's work goes if you build in a fork of this repository | Empty |
-| [resources/](resources/) | Source material as delivered by the challenge owners | Being prepared |
+| [resources/](resources/) | Source material as delivered by the challenge owners, including a demo of the DACC procurement-requirements tool | Being prepared |
 
 ## Quick start
 
@@ -53,15 +53,20 @@ python -m inkooptafel.toets examples/assessment-example.yaml
 
 # From profile to sovereignty advice and requirements (illustrative rules, not advice)
 python -m inkooptafel.advies examples/assessment-example.yaml --rules examples/example-rules.yaml
+
+# From SEAL level and scope to a focused requirement set (illustrative library, not advice)
+python -m inkooptafel.selectie examples/scope-example.yaml --library examples/example-requirements.yaml
 ```
 
 The tooling is optional. **Teams are free to choose any language and approach**, as long as the decision rules are explicit and testable.
 
 ## Important to know
 
-- The toets does **not** give a sovereignty level, and the SEAL level does not follow automatically from BIV: it concerns the concrete service being procured. Designing that step is the core of the challenge.
+- The core of the challenge is step 03: from a SEAL level **and** the scope of the procurement to a focused requirement set, with a reason for every requirement left out. See [docs/requirements.md](docs/requirements.md).
+- The DACC's own requirement library is **not** shared with teams. Build your library from public sources; the jury uses the DACC library as a checklist.
+- Material shared on Alkemio only stays out of your repository, prompts and pitch deck.
 - Minimum requirements from law and regulation (see [docs/sources.md](docs/sources.md)) form the floor of your advice.
-- Use AI for explanation or the question flow if you like, but do not let a language model decide the classification. See [docs/rules-as-code.md](docs/rules-as-code.md).
+- A language model may help find requirements in public sources, as long as each keeps its source. Do not let it decide the SEAL level, the classification or the selection. See [docs/rules-as-code.md](docs/rules-as-code.md).
 - This repository contains no confidential tender documents or supplier information. Keep it that way in your submission.
 
 ## Licensing

@@ -4,6 +4,7 @@ Use this as a navigation page during the hackathon.
 
 **The model and the rules**
 
+- [requirements.md](requirements.md): the core of the challenge, from SEAL level and scope to a focused requirement set
 - [classification-model.md](classification-model.md): the classificatietoets (steps 0-4, BIV) and what is missing
 - [sovereignty-levels.md](sovereignty-levels.md): SEAL reference scale and guidance for advising a level
 - [sources.md](sources.md): laws, frameworks and guidance with possible minimum requirements

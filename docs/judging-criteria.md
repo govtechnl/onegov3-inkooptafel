@@ -8,30 +8,31 @@ A submission that fails any Must criterion is not a valid submission, regardless
 
 | # | Criterion | How the jury checks |
 |---|---|---|
-| M1 | Working tool that classifies a process and its critical data on process criticality and BIV, based on the supplied toets | Live demo or recording; the outcome follows the rules in `data/toets.yaml` |
-| M2 | For each outcome an advised sovereignty level, with a traceable justification | Rationale linked to the toets and to sources |
-| M3 | Output a buyer can use in tender documents | Requirements and/or award criteria, labelled as such |
-| M4 | Decision rules explicit in code or configuration | Rules readable without the UI; no decision hidden in a prompt |
+| M1 | Working tool that produces a focused requirement set from a SEAL level and the scope of a procurement | Live demo or recording on at least two cases of different scope; the sets differ where the scope differs |
+| M2 | Every selected requirement traceable to a public source | Source id or link per requirement |
+| M3 | A reason for every requirement left out | The buyer can see why a requirement is not in the set |
+| M4 | Selection rules explicit in code or configuration | Rules readable without the UI; no decision hidden in a prompt |
 | M5 | Code and rules open source | Public repository, linked in Alkemio, under an OSI-approved licence (code) and CC BY 4.0 / CC0 (rules, docs) |
 
 ## ⭐ Should: distinguishing qualities
 
 | # | Criterion | What it looks like |
 |---|---|---|
-| S1 | Traceability | The user sees which answers led to the classification and which source each requirement comes from |
+| S1 | Works for different kinds of procurement | Demonstrated on the supplied cases in `cases/`, not tuned to one |
 | S2 | Usable by non-technical users | A buyer or information manager gets through the question flow in about five minutes |
-| S3 | Demonstrated on a supplied case | Worked example from `cases/` in your repository and your Alkemio submission |
-| S4 | Aligned with existing frameworks and minimum requirements | Requirements fit GIBIT, the VNG cloud template or the EU Cloud Sovereignty Framework, and respect the floor from law and regulation |
-| S5 | Rules maintainable separately from the interface | Changing a data file changes the outcome; tests show what changed |
+| S3 | Coverage against the DACC library | The jury compares your set for a case with the DACC requirement library: relevant requirements found, irrelevant ones left out |
+| S4 | Aligned with existing frameworks and minimum requirements | Requirements fit GIBIT, the VNG cloud guidance or the EU Cloud Sovereignty Framework, and respect the floor from law and regulation |
+| S5 | Library and rules maintainable separately from the interface | Changing a data file changes the outcome; tests show what changed |
 
 ## ⚠ Should not: pitfalls to avoid
 
 | # | Pitfall | Why it weakens or disqualifies |
 |---|---|---|
-| X1 | An LLM interprets legal texts and decides the classification | Violates M4; not testable, not explainable |
+| X1 | A language model decides the SEAL level, the classification or the selection | Violates M4; not testable, not explainable. Using a model to find candidate requirements in sources is fine |
 | X2 | Requirements that exclude suppliers without proportionate justification | Conflicts with procurement law; unusable in a real tender |
-| X3 | "Autonomy washing" | Labelling everything as high risk, or adopting supplier claims without checking them |
-| X4 | Non-reproducible or non-open code or rules | Violates M5; the jury cannot verify the method |
+| X3 | Showing every requirement for a level | That is what tools do today; it leaves the selection to the buyer |
+| X4 | "Autonomy washing" | Labelling everything as high risk, or adopting supplier claims without checking them |
+| X5 | Non-reproducible or non-open code or rules | Violates M5; the jury cannot verify the method |
 
 ## ✨ Could: bonus for outstanding submissions
 
@@ -40,6 +41,7 @@ A submission that fails any Must criterion is not a valid submission, regardless
 | C1 | Open-source viability | Indicators of contributor-community size and diversity for an open-source alternative, from public data |
 | C2 | Link to the DACC maturity model | Process-level outcome connected to system-level classification |
 | C3 | Usable by several organisations at once | For example a shared classification of common application families, supporting joint procurement |
+| C4 | Translation from the classificatietoets to the DACC matrix | Process criticality and BIV mapped to criticality K1-K4 and data classification D1-D4, with the choices made explicit (they do not map one to one) |
 
 ## How judging works
 

@@ -1,6 +1,6 @@
 # Sovereignty levels
 
-The classificatietoets does not assign a sovereignty level, and is explicit that the SEAL level does not follow automatically from the BIV score: a SEAL assessment concerns the concrete service being procured. You design that step. This page gives you a reference scale and some guidance. It is not a prescribed answer.
+The classificatietoets does not assign a sovereignty level. The DACC's procurement-requirements tool gives an indicative SEAL level from a matrix of criticality and data classification; use that as the input to step 03 (see [requirements.md](requirements.md)). This page explains the SEAL scale and what to keep in mind. You may still argue for a different level for a specific case, if you justify it.
 
 ## Reference: the EU Cloud Sovereignty Framework (SEAL)
 

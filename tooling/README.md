@@ -21,6 +21,8 @@ pytest -v
 | `inkooptafel/advies.py` | Evaluates **your** rules on a profile: combined SEAL minimum per objective and a PvE fragment with a source per requirement |
 | `examples/assessment-example.yaml` | A filled-in toets for a fictional process |
 | `examples/example-rules.yaml` | Three illustrative rules in the rules format. **Example only, not advice** |
+| `inkooptafel/selectie.py` | Step 03: from a SEAL level and a scope to a focused requirement set, with a reason for every requirement left out |
+| `examples/example-requirements.yaml`, `examples/scope-example.yaml` | An illustrative requirement library and scope. **Example only, not the DACC library** |
 | `tests/` | Schema checks, BIV rule tests, an end-to-end example |
 
 ## Try it

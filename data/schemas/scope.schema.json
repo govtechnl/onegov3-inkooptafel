@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/govtechnl/onegov3-inkooptafel/data/schemas/scope.schema.json",
+  "title": "Procurement scope",
+  "description": "What is being procured: the chosen SEAL level and yes/no facts about the scope. The flag names are a starter vocabulary; teams may add their own.",
+  "type": "object",
+  "required": ["seal", "scope"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {"type": "string"},
+    "seal": {"enum": ["SEAL-1", "SEAL-2", "SEAL-3", "SEAL-4"]},
+    "scope": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"}
+    }
+  }
+}

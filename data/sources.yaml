@@ -185,9 +185,21 @@ sources:
     url: null
     notes: "Developed in the NDS; BZK announced publication for Q2 or Q3 2026. Not found online yet."
   - id: ams-inkooptool-lijst
-    name: List from the prototype procurement tool (AMS Institute / Amsterdam)
+    name: Requirement library of the DACC procurement-requirements tool
     category: dataset
     origin: challenge-brief
     url: null
-    notes: "Teams get the list that came out of an earlier tested prototype, not the tool itself.\
-  \ Follows."
+    notes: "Not shared with teams: it contains strategically sensitive material. The challenge\
+  \ owners use it as a checklist for the jury. See docs/requirements.md."
+  - id: pianoo
+    name: PIANOo Expertisecentrum Aanbesteden
+    category: guidance
+    origin: challenge-brief
+    url: https://www.pianoo.nl/
+    notes: Dutch public procurement expertise centre, with guidance on ICT procurement.
+  - id: dictu-toetsingsinstrument
+    name: Toetsingsinstrument Soevereiniteit Clouddiensten (DICTU)
+    category: guidance
+    origin: challenge-brief
+    url: https://www.dictu.nl/sites/default/files/bestanden/website/DICTU%20Toetsingsinstrument%20Soevereiniteit%20Clouddiensten%20v1.0.1.pdf
+    notes: Instrument to score cloud services on digital sovereignty, for use in tenders.

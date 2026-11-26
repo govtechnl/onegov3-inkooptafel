@@ -36,3 +36,4 @@ jobs:
         run: |
           python -m inkooptafel.toets examples/assessment-example.yaml
           python -m inkooptafel.advies examples/assessment-example.yaml --rules examples/example-rules.yaml
+          python -m inkooptafel.selectie examples/scope-example.yaml --library examples/example-requirements.yaml

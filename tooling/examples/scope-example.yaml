@@ -1,0 +1,11 @@
+# ILLUSTRATIVE EXAMPLE ONLY. A scope loosely based on the GGD case in cases/.
+# The SEAL level comes from step 02 (for example the DACC matrix); the flags describe
+# what is actually being procured.
+name: "VOORBEELD: vervanging forensische applicatie GGD"
+seal: SEAL-3
+scope:
+  persoonsgegevens: true
+  hooggerubriceerd: true
+  leverancier_beheert_dienst: true
+  cloud: true
+  ai: false
