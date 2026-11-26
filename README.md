@@ -8,6 +8,7 @@ This repository hosts the challenge brief, supporting documents, machine-readabl
 - **Date:** 9-10 December 2026
 - **Location:** The Hague Tech, Den Haag
 - **Challenge owners:** Jacco Brouwer (VNG Realisatie), Thijs Turèl (DACC / AMS Institute)
+- **Content expert classificatietoets:** Suzanne Kaufmann (Data Governance Lead, Gemeente Amsterdam), on location on 9 and 10 December
 - **Tech partner:** [GreenPT](https://greenpt.nl/)
 - **Community, teams and submissions:** [alkem.io/onegov-hackathon](https://alkem.io/onegov-hackathon)
 - **Contact:** [hack@govtechnl.nl](mailto:hack@govtechnl.nl)
@@ -30,7 +31,7 @@ The full brief is in [CHALLENGE.md](CHALLENGE.md). New teams start with [START_H
 | [CHALLENGE.md](CHALLENGE.md) | Full challenge brief (English working translation of the Dutch original) | Available |
 | [START_HERE.md](START_HERE.md) | Step-by-step start for teams | Available |
 | [docs/](docs/) | Requirement libraries and scope, classificatietoets, sovereignty levels, sources, rules-as-code guidance, procurement context, personas, scenarios, judging criteria, glossary | Available |
-| [data/toets.yaml](data/toets.yaml) | The classificatietoets: steps 0-4, process criticality, all BIV questions, scores and decision rules | Available |
+| [data/toets.yaml](data/toets.yaml) | The classificatietoets (beta, still being developed): steps 0-4, process criticality, all BIV questions, scores and decision rules | Available |
 | [data/sources.yaml](data/sources.yaml) | Laws, frameworks and guidance with possible minimum requirements | Available (links for most sources; the rest follow) |
 | [data/schemas/](data/schemas/) | JSON Schemas for the catalogues, answers to the toets, your rules, a requirement library and a procurement scope | Available |
 | [data/ibd/](data/ibd/) | IBD list of critical processes for municipalities | Being prepared |

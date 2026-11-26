@@ -1,5 +1,8 @@
 # Classificatietoets: proces- en dataclassificatie (stap 0 t/m 4)
 #
+# BETA: this toets is still being developed and will change. Published here with
+# the consent of its author for use during OneGov #3.
+#
 # Machine-readable version of the questionnaire supplied by the challenge owners
 # (Suzanne Kaufmann et al.), the version that is being developed further and used
 # in a pilot in Amsterdam. Derived for OneGov #3; the original Word document is not
@@ -196,7 +199,7 @@ biv:
     decision_rules:
       - level: geheim
         if_any_yes: [V1, V2, V3, V7]
-        notes: V2 gives a provisional Geheim. A classification Geheim is not in itself a formal secrecy decision.
+        notes: V2 gives a provisional Geheim. A classification Geheim is not in itself a formal secrecy decision. V3 = ja gives Geheim (confirmed by the author, 26 November 2026).
       - level: vertrouwelijk
         if_any_yes: [V4, V5, V6]
         notes: With V4 = ja, information security assesses severity; with serious consequences Geheim can be appropriate.

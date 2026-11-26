@@ -1,6 +1,10 @@
 # Classification model: the classificatietoets
 
-The leading model for this challenge is the **classificatietoets** (process and data classification, steps 0 to 4), supplied by the challenge owners. It is the version that is being developed further and used in a pilot in Amsterdam. It builds on BIO2 and takes the assessment from the process down to the critical data that process needs.
+> **Beta.** The classificatietoets is a beta version that is still being developed. Expect it to change after the hackathon.
+
+The **classificatietoets** (process and data classification, steps 0 to 4) is one of the options for step 01 of this challenge. It was developed by Suzanne Kaufmann (Data Governance Lead, Gemeente Amsterdam) and others, and is used in a pilot in Amsterdam. It builds on BIO2 and takes the assessment from the process down to the critical data that process needs. The questions for availability (B) and integrity (I) largely follow the baseline classification questionnaire of the IBD (VNG).
+
+Suzanne Kaufmann is at the hackathon on both days as content expert for the toets. Ask her how a question is meant.
 
 Machine-readable version: [`data/toets.yaml`](../data/toets.yaml). Code: [`tooling/inkooptafel/toets.py`](../tooling/inkooptafel/toets.py).
 
@@ -77,6 +81,6 @@ That is the core of the challenge:
 
 ## The earlier simplified view
 
-Before the toets was available, the challenge used a simplified matrix from the VNG *Uitvoeringsstrategie Cloud* work: business-critical or not, times five data classes (openbaar, door wet- en regelgeving gebonden, persoonsgegevens, bijzondere persoonsgegevens, staatsgeheimen), giving ten patterns linked to mitigating measures from the Handreiking Cloud. You may use it as a quick entry or a sanity check, but the toets is leading.
+Before the toets was available, the challenge used a simplified matrix from the VNG *Uitvoeringsstrategie Cloud* work: business-critical or not, times five data classes (openbaar, door wet- en regelgeving gebonden, persoonsgegevens, bijzondere persoonsgegevens, staatsgeheimen), giving ten patterns linked to mitigating measures from the Handreiking Cloud. You may use it as a quick entry or a sanity check.
 
 If you think the toets is wrong or incomplete, say so in your pitch or open an issue. Do not change `data/toets.yaml` silently.

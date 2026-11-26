@@ -5,6 +5,7 @@
 > *Is this system business-critical? What data does it hold? And which requirements does this procurement really need? You build the tool that answers that in five minutes.*
 >
 > **Challenge owners:** Jacco Brouwer (VNG Realisatie), Thijs Turèl (DACC / AMS Institute)
+> **Content expert classificatietoets:** Suzanne Kaufmann (Data Governance Lead, Gemeente Amsterdam)
 > **Contact:** [hack@govtechnl.nl](mailto:hack@govtechnl.nl)
 
 This is an English working translation of the Dutch challenge brief. The authoritative version is the Dutch brief on Alkemio.
