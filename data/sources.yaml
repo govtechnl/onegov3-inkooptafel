@@ -191,6 +191,14 @@ sources:
     url: null
     notes: "Not shared with teams: it contains strategically sensitive material. The challenge\
   \ owners use it as a checklist for the jury. See docs/requirements.md."
+  - id: atlas-svb
+    name: ATLAS (Assessment Tool voor Leveranciers, Autonomie en Soevereiniteit), SVB
+    category: practice
+    origin: challenge-brief
+    url: null
+    notes: "Functional mock-up by the SVB for classifying a workload (stelknoppen, profiles,\
+  \ measures), used in internal pilots. Not a production product. Shared on Alkemio\
+  \ for use during the hackathon only; do not put it in your repository."
   - id: pianoo
     name: PIANOo Expertisecentrum Aanbesteden
     category: guidance

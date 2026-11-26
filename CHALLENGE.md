@@ -41,7 +41,7 @@ You build the step after the SEAL level: a tool that, from the level and the sco
 
 | Step | What happens |
 |---|---|
-| **01 Classify** | Short. Use the classificatietoets ([`docs/classification-model.md`](docs/classification-model.md)) or the two axes of the DACC matrix: criticality and data classification. Outcome: a profile. |
+| **01 Classify** | Short. Use the classificatietoets ([`docs/classification-model.md`](docs/classification-model.md)) or the two axes of the DACC matrix: criticality and data classification. ATLAS, a functional mock-up by the SVB shared on Alkemio, shows a worked-out way to classify a workload. Outcome: a profile. |
 | **02 SEAL level** | The indicative SEAL level comes from the DACC matrix. You do not have to invent this step. |
 | **03 Focused requirement set (the core)** | From the SEAL level **and** the scope of the procurement, the tool assembles the requirements and award criteria that fit, from public sources, each traceable to its source. For every requirement it leaves out, it says why. Exportable (e.g. `.docx` or `.md`) and demonstrated on several cases. See [`docs/requirements.md`](docs/requirements.md). |
 
